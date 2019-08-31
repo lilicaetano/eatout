@@ -1,5 +1,10 @@
-<h1>RestaurantSSS</h1>
-<% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
-  <br>
-<% end %>
+<h1>Restaurants</h1>
+<div class="card-restaurant">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-restaurant-infos">
+    <h2><%= @restaurant.name  %></h2>
+    <p><%=# @restaurant.description %></p>
+  </div>
+</div>
+
+
