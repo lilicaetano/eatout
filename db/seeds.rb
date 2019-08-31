@@ -19,13 +19,13 @@ RESTAURANTS = [
 ]
 
 
-def restaurant_hasher(nested_array)
+def restaurant_creator(nested_array)
   nested_array.each do |restaurant|
-    newRestaurant = Restaurant.create!(name: restaurant[0])
+    newRestaurant = Restaurant.create!(name: restaurant[0], address: "#{restaurant[1]}, London")
   end
 end
 
-
+require 'geocoder'
 require 'faker'
 
 puts 'Seed start'
@@ -36,13 +36,14 @@ Restaurant.destroy_all
 Faker::Internet.unique.clear
 
 counter = 0
+Faker::Config.locale = 'en-GB'
 
 5.times do
   newUser = User.create!(email: "user#{counter}@mango.com", password: 'secret', username: Faker::Internet.unique.username)
   counter += 1
 end
 
-restaurant_hasher(RESTAURANTS)
+restaurant_creator(RESTAURANTS)
 
 
 
