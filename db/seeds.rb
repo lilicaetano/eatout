@@ -31,11 +31,14 @@ require 'faker'
 puts 'Seed start'
 
 User.destroy_all
+Restaurant.destroy_all
+
+Faker::Internet.unique.clear
 
 counter = 0
 
 5.times do
-  newUser = User.create!(email: "user#{counter}@mango.com", password: 'secret')
+  newUser = User.create!(email: "user#{counter}@mango.com", password: 'secret', username: Faker::Internet.unique.username)
   counter += 1
 end
 
