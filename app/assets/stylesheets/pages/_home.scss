@@ -1,5 +1,8 @@
 // Specific CSS for your home-page
-
+body{
+  max-height: 812px;
+  max-width: 375px;
+}
 
 .home-image {
     background-image: url("background.jpg");
@@ -10,13 +13,18 @@
     padding: 150px 0;
 }
 
-// .home-logo {
-//   image
-// }
+
+.home-logo {
+  padding: 20px 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
 
 .banner {
 
-  padding: 150px 50px;
+  padding: 10px 50px;
 }
 
 .banner h1 {
@@ -35,9 +43,17 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn-flat {
+.btn-flat .join{
   color: white;
-  padding: 8px 24px;
+  padding: 18px 64px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+.btn-flat .sign{
+  color: white;
+  padding: 18px 64px;
   border-radius: 4px;
   background: #1EDD88;
   transition: background 0.3s ease;
