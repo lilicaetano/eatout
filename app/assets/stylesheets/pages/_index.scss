@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
+body{
+  max-height: 812px;
+  max-width: 375px;
+}
+
 @import "home";
