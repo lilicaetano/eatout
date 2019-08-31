@@ -16,6 +16,6 @@ class RestaurantsController < ApplicationController
   end
 
   def map
-    @restaurants = Restaurant.last
+
   end
 end

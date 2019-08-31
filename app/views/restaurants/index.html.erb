@@ -1,10 +1,15 @@
-<h1>RestaurantSSS</h1>
+<h1>Restaurants</h1>
 <% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
-  <br>
+<div class="card-restaurant">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-restaurant-infos">
+    <h2><%= link_to restaurant.name, restaurant_path(restaurant)%></h2>
+  </div>
+</div>
 <% end %>
 
-<%= link_to "Show Map", restaurants_map_path, remote: true %>
-<%#= render 'map'%>
+<div id='map-button'>
+  <%= render 'map' %>
+</div>
 
 
