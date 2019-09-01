@@ -1,8 +1,4 @@
 // Specific CSS for your home-page
-body{
-  max-height: 812px;
-  max-width: 375px;
-}
 
 .home-image {
     background-image: url("background.jpg");
@@ -43,19 +39,21 @@ body{
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn-flat .join{
+.sign{
   color: white;
   padding: 18px 64px;
   border-radius: 4px;
   background: #1EDD88;
+  text-align: center;
   transition: background 0.3s ease;
 }
 
-.btn-flat .sign{
+.login{
   color: white;
-  padding: 18px 64px;
+  padding: 18px 72px;
   border-radius: 4px;
   background: #1EDD88;
+  text-align: center;
   transition: background 0.3s ease;
 }
 
