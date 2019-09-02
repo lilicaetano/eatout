@@ -5,6 +5,14 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 10px;
+}
+
+.nav-pills {
+  display: inline-flex;
+  background: #e5e5e5;
+  border-radius: 0.25rem;
+  padding: 2px;
 }
 
 .card-restaurant img {
