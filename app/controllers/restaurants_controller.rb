@@ -5,7 +5,8 @@ class RestaurantsController < ApplicationController
     @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
-        lng: restaurant.longitude
+        lng: restaurant.longitude,
+        image_url: helpers.asset_url('mango_logo.png')
         #infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: restaurant })
       }
     end
