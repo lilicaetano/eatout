@@ -1,7 +1,7 @@
 import mapboxgl from 'mapbox-gl';
 
 const initMapbox = () => {
-  const mapElement = document.getElementById('map');
+  const mapElement = document.getElementById('mapbox');
 
   const fitMapToMarkers = (map, markers) => {
     const bounds = new mapboxgl.LngLatBounds();
@@ -12,7 +12,7 @@ const initMapbox = () => {
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
-      container: 'map',
+      container: 'mapbox',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
