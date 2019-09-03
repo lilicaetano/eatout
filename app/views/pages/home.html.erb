@@ -12,9 +12,10 @@
       <p>Never eat alone again!</p>
 
       <div class="buttons">
-        <a class="btn btn-flat sign" href="#">Sign Up</a>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat login" %>
         <br><br>
-        <a class="btn btn-flat login" href="#">Login </a>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-flat login" %>
+        <%#= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn login" %>
       </div>
     </div>
 
