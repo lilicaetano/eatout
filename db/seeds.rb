@@ -18,6 +18,10 @@ RESTAURANTS = [
  ["Ye Olde Cheshire Cheese", "145 Fleet St", "EC4A 2BU"]
 ]
 
+USERS = [
+  ["Alex", "Stones", "amstones@mango.com", "MangoMan123", 25, 4]
+]
+
 
 def restaurant_creator(nested_array)
   nested_array.each do |restaurant|
@@ -43,6 +47,9 @@ Faker::Config.locale = 'en-GB'
   counter += 1
 end
 
+USERS.each do |user|
+  newUser = User.create!(first_name: user[0], last_name: user[1], email: user[2], username: user[3], age: user[4], rating: user[5], password: 'secret')
+end
 restaurant_creator(RESTAURANTS)
 
 
