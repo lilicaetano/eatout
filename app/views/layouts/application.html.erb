@@ -17,7 +17,7 @@
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-  <% unless controller_name == "pages" %>
+  <% unless controller_name == "pages" || controller_name == "sessions"%>
     <%= render 'shared/footer' %>
   <% end %>
   </body>
