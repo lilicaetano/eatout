@@ -1,10 +1,8 @@
-<h1>Un Ristoranteee</h1>
-
 <div class="card-product">
   <img src="https://images.pexels.com/photos/62097/pexels-photo-62097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
   <div class="card-product-infos">
     <h2><%= @restaurant.name  %></h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
+    <p><%= @restaurant.address %></p>
 
    <%= simple_form_for Meeting.new do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
