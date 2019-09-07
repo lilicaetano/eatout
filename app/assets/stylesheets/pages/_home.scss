@@ -23,28 +23,28 @@
 .home-logo{
   display:flex;
   padding: 20px 100px;
-  // display: block;
-  // margin-left: auto;
-  // margin-right: auto;
+
 }
 
 .sign-up{
   color: white;
-  padding: 18px 50px;
+  padding: 10px 20px;
   border-radius: 4px;
   background: #1EDD88;
   text-align: center;
   transition: background 0.3s ease;
-  justify-content: space-around;
+  font-size: 25px;
 }
 
 .login{
   color: white;
-  padding: 18px 50px;
+  padding: 10px 26px;
   border-radius: 4px;
   background: #1EDD88;
   text-align: center;
   transition: background 0.3s ease;
+  font-size: 25px;
+
 }
 
 .text{
@@ -63,42 +63,31 @@
 
 
 
-
-
-
-// .banner h1 {
-//   margin: 0;
-//   color: white;
-
-// }
-
  p {
+
   font-size: 20px;
    color: white;
    opacity: .7;
    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
 }
 
-// .sign{
-//   color: white;
-//   padding: 18px 64px;
-//   border-radius: 4px;
-//   background: #1EDD88;
-//   text-align: center;
-//   transition: background 0.3s ease;
-// }
+.tandc {
+  position: absolute;
+  bottom: 10px;
 
-// .login{
-//   color: white;
-//   padding: 18px 72px;
-//   border-radius: 4px;
-//   background: #1EDD88;
-//   text-align: center;
-//   transition: background 0.3s ease;
-// }
+}
 
-.btn-flat:hover {
-  background: #1BCB7F;
+
+a.sign-up:hover{
+  background-color: #20A96C;
   color: white;
+  text-decoration: none;
+}
+
+a.login:hover{
+  background-color: #20A96C;
+  color: white;
+  text-decoration: none;
 }
 
