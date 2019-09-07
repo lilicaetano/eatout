@@ -1,4 +1,7 @@
-<h3><%= restaurant.name %></h3>
-<%= restaurant.address %>
+<div class='d-flex flex-column align-items-center'>
+  <h3><%= restaurant.name %></h3>
+  <%= restaurant.address %>
+  <%= link_to "Create a Meeting", restaurant_path(restaurant), class: "btn" %>
+</div>
 
 
