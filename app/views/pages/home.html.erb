@@ -1,28 +1,32 @@
 
-<div class="container">
-
-  <div class="home-image">
+<div class="wrapper">
+  <div class="home">
 
     <div class="home-logo">
       <%= image_tag "mango_white.png" %>
     </div>
 
-    <div class="banner">
+    <div class="text">
       <h1>Mango</h1>
       <p>Never eat alone again!</p>
-
-      <div class="buttons">
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-flat login" %>
-        <br><br>
-        <%= link_to "Login", new_user_session_path, class: "btn btn-flat login" %>
-        <%#= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn login" %>
-      </div>
     </div>
 
+    <div class="sign-up">
+        <%= link_to "Sign Up", new_user_registration_path, class: "sign-up" %>
+         </div>
+         <br>
+    <div class="login">
+        <%= link_to "Login", new_user_session_path, class: "login" %>
+        <%#= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "btn login" %>
+    </div>
+
+
+
+
+
+    <p class="tandc">Terms and Conditions</p>
+
   </div>
 
-  <div class= "tandc">
-    <p>Terms and Conditions</p>
-  </div>
 
 </div>
