@@ -1,5 +1,24 @@
-<h1>Show</h1>
-<%= @user.email %>
-<br>
-<h3>Username:</h3>
-<%= @user.username %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card">
+  <div class="profile-pic">
+  <%= image_tag 'johndoe.jpg', alt: "John", class: "card-avatar" %>
+    <div class="profile-pic-info">
+      <h1>John Doe</h1>
+      <p class="job-title">Graphic Designer, London</p>
+      <div class="profile-pic-rating">
+        <p>Rating</p>
+
+      </div>
+    </div>
+  </div>
+  <div class="interests-card">
+    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+  </div>
+  <div class="favicons">
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div>
+  <p><button>Contact</button></p>
+</div>
