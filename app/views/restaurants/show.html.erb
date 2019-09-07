@@ -6,8 +6,6 @@
     <h2><%= @restaurant.name  %></h2>
     <p>Product description with <strong>relevant info</strong> only.</p>
 
-    <%= link_to "New meeting", new_meeting_path(@meeting), class: 'btn btn-info btn-lg' %>
-
    <%= simple_form_for Meeting.new do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :restaurant_id, :value => params[:id] %>
@@ -17,3 +15,4 @@
     <% end %>
   </div>
 </div>
+<%= link_to 'Back', restaurants_path, class: 'btn btn-info' %>

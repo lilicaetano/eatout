@@ -9,7 +9,7 @@
           <p><%= meeting.restaurant.address %></p>
         </div>
         <div class="">
-          <%= link_to 'Details', meeting_path(meeting.restaurant), class: 'btn btn-info' %>
+          <%= link_to 'Details', meeting_path(meeting), class: 'btn btn-info' %>
           <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
         </div>
       </div>
@@ -23,3 +23,4 @@
       </div>
     </div>
   <% end %>
+  <%= link_to 'View restaurants', restaurants_path, class: 'btn btn-info' %>
