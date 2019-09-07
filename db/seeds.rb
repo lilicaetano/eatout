@@ -19,7 +19,10 @@ RESTAURANTS = [
 ]
 
 USERS = [
-  ["Alex", "Stones", "amstones@mango.com", "MangoMan123", 25, 4]
+  ["Bob", "Dylan", "bd@mango.com", "MossyRock", 78, 5],
+  ["Gregory", "Damsel", "greg@mango.com", "NotARobot", 28, 3],
+  ["Alex", "Stones", "amstones@mango.com", "MangoMan123", 25, 4],
+  ["Mickey", "Mouse", "icravecheddar@mango.com", "EmperorMickster", 91, 2]
 ]
 
 
@@ -34,8 +37,10 @@ require 'faker'
 
 puts 'Seed start'
 
+Meeting.destroy_all
 User.destroy_all
 Restaurant.destroy_all
+
 
 Faker::Internet.unique.clear
 
