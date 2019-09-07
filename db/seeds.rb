@@ -18,6 +18,13 @@ RESTAURANTS = [
  ["Ye Olde Cheshire Cheese", "145 Fleet St", "EC4A 2BU"]
 ]
 
+USERS = [
+  ["Bob", "Dylan", "bd@mango.com", "MossyRock", 78, 5],
+  ["Gregory", "Damsel", "greg@mango.com", "NotARobot", 28, 3],
+  ["Alex", "Stones", "amstones@mango.com", "MangoMan123", 25, 4],
+  ["Mickey", "Mouse", "icravecheddar@mango.com", "EmperorMickster", 91, 2]
+]
+
 
 def restaurant_creator(nested_array)
   nested_array.each do |restaurant|
@@ -30,8 +37,10 @@ require 'faker'
 
 puts 'Seed start'
 
+Meeting.destroy_all
 User.destroy_all
 Restaurant.destroy_all
+
 
 Faker::Internet.unique.clear
 
@@ -43,6 +52,9 @@ Faker::Config.locale = 'en-GB'
   counter += 1
 end
 
+USERS.each do |user|
+  newUser = User.create!(first_name: user[0], last_name: user[1], email: user[2], username: user[3], age: user[4], rating: user[5], password: 'secret')
+end
 restaurant_creator(RESTAURANTS)
 
 
