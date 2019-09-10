@@ -1,27 +1,32 @@
 <div class='d-flex flex-column align-items-center'>
   <h1>Your Meetings</h1>
-  <% if @meetings != [] %>
-  <div class='cards'>
-    <% @meetings.each do |meeting| %>
-      <div class = 'card-meeting p-3 my-1'>
-        <div class="card-meeting-text">
-          <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
-          <p><%= meeting.restaurant.address %></p>
-          <p><%= meeting.meet_time.strftime("%H:%M")%></p>
-        </div>
-        <div class='d-flex align-items-center flex-column'>
-          <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
-          <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
-          <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
-        </div>
-      </div>
-    <% end %>
+  <% if @meetings.where(user: current_user) != [] %>
+    <div class='cards'>
+      <% @meetings.each do |meeting| %>
+        <% if meeting.user == current_user %>
+          <div class = 'card-meeting p-3 my-1'>
+            <div class="card-meeting-text">
+              <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
+              <p><%= meeting.restaurant.address %></p>
+              <p><%= meeting.meet_time.strftime("%H:%M")%></p>
+            </div>
+
+            <div class='d-flex align-items-center flex-column'>
+              <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
+              <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
+              <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <% else %>
+  <% else %>
     <div class='dflex text-center'>
       <h2 class='oh-no'>Oh no! You haven't booked anything yet!</h2>
+    </div>
   <% end %>
   <br>
+  <div>
   <%= link_to 'View restaurants', restaurants_path, class: 'btn btn-info' %>
-</div>
+  </div>
 
