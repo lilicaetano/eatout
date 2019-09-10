@@ -1,0 +1,26 @@
+.card-meeting {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #ec9b3b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.card-meeting {
+  .card-meeting-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+  color: black;
+  }
+  div {
+    .btn {
+      margin: 5px;
+    }
+  }
+}

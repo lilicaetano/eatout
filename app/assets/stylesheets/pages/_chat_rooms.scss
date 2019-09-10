@@ -1,0 +1,40 @@
+.container {
+  margin: 0 auto;
+  max-width: 36em;
+  padding: 2em 0 0;
+}
+
+.chat-header {
+  background: rgba(0, 0, 0, .05);
+  border-radius: 3px;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+
+.create-message {
+  height: 20em;
+  width: 100%;
+}
+
+.messages {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 3px;
+  height: 10em;
+  margin: 0 0 .5em;
+  overflow-y: scroll;
+  padding: .5em;
+}
+
+.message {
+  .user {
+    font-weight: bold;
+
+    &.me {
+      color: #b6191e;
+    }
+  }
+}
+
+.other-links {
+  margin: .5em 0 0;
+}

@@ -21,5 +21,6 @@
   <% unless controller_name == "pages" || controller_name == "sessions"%>
     <%= render 'shared/footer' %>
   <% end %>
+   <%= yield :after_js %>
   </body>
 </html>
