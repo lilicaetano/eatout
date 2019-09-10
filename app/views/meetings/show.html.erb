@@ -3,9 +3,13 @@
   <div>
     <%= @meeting.restaurant.name %>
   </div>
-  <div>
-    User email: <%= @meeting.user.email %>
-  </div>
+  <div
+  id="map"
+  style="width: 100%;
+  height: 400px;"
+  data-markers="<%= @marker.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
   <br>
   <div>
     <%= link_to 'Meetings list', meetings_path, class: 'btn btn-info' %>
