@@ -6,6 +6,12 @@ class MeetingsController < ApplicationController
 
   def show
     @meeting = Meeting.find(params[:id])
+    @marker = [{
+      lat: @meeting.restaurant.latitude,
+      lng: @meeting.restaurant.longitude,
+      image_url: helpers.asset_url('pink-map-pin.png'),
+      infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @meeting.restaurant})
+    }]
   end
 
 
