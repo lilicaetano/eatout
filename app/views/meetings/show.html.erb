@@ -2,6 +2,8 @@
 <h1>Meeting</h1>
   <div>
     <%= @meeting.restaurant.name %>
+    <br>
+    <%= @meeting.user.username %>
   </div>
   <div
   id="map"
@@ -12,6 +14,15 @@
 ></div>
   <br>
   <div>
+    <% if Guest.where(meeting: @meeting) == [] && @meeting.user != current_user %>
+    <%= simple_form_for Guest.new do |f| %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :meeting_id, :value => params[:id] %>
+      <%#= f.hidden_field :meet_time, :value => Date.today %>
+      <%= f.submit %>
+    <% end %>
+      <%#= link_to 'Join the meeting!', guests,class: 'btn btn-info' %>
+    <% end %>
     <%= link_to 'Meetings list', meetings_path, class: 'btn btn-info' %>
   </div>
 </div>
