@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show]
   resources :meetings, only: [:index, :show, :create, :new, :destroy] # add create meeting functionality later?
   resources :chat_rooms, only: [ :show ] do
-    resources :messages, only: [ :create ]
+  resources :messages, only: [ :create ]
   end
 end
