@@ -4,7 +4,7 @@
     <%= @meeting.restaurant.name %>
     <br>
     <%= @meeting.user.username %>
-    <%= cl_image_tag @meeting.user.photo, class: "avatar" %>
+    <%= link_to cl_image_tag(@meeting.user.photo), user_path(@meeting.user), class: "avatar-link-large" %>
   </div>
   <div
   id="map"
