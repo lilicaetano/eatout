@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :meetings
   has_many :messages, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 end
