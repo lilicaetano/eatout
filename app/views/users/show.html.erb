@@ -2,7 +2,7 @@
 
 <div class="card">
   <div class="profile-pic">
-  <%= image_tag 'johndoe.jpg', alt: "John", class: "card-avatar" %>
+  <%= cl_image_tag current_user.photo, alt: "John", class: "card-avatar" %>
     <div class="profile-pic-info">
       <h1>John Doe</h1>
       <p class="job-title">Graphic Designer, London</p>

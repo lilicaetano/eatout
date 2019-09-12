@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Mango</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -20,5 +21,6 @@
   <% unless controller_name == "pages" || controller_name == "sessions"%>
     <%= render 'shared/footer' %>
   <% end %>
+   <%= yield :after_js %>
   </body>
 </html>
