@@ -19,12 +19,22 @@
   <div class="information-card">
     <div class="information-card-buffer">
       <div class="interests-card">
-        <h2>Food Preferences</h2>
+        <div class="card-title-edit">
+          <h2>Food Preferences</h2>
+          <%= link_to edit_user_registration_path do %>
+          <i class="far fa-edit"></i>
+          <% end %>
+        </div>
         <p>My favourite food is Japanese, Thai or anything East Asian. Lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
       </div>
     </div>
     <div class="interests-card">
-      <h2>Interests</h2>
+      <div class="card-title-edit">
+        <h2>Interests</h2>
+        <%= link_to edit_user_registration_path do %>
+          <i class="far fa-edit"></i>
+        <% end %>
+      </div>
       <p>I am interested in web design and technology. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
     </div>
   </div>
