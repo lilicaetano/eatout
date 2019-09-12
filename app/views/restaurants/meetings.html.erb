@@ -1,9 +1,9 @@
 <div class='d-flex flex-column align-items-center'>
+  <h1>Meetings open to join at <%= @restaurant.name %></h1>
   <div class='cards'>
     <% @meetings.each do |meeting| %>
       <div class = 'card-meeting p-3 my-1'>
         <div class="card-meeting-text">
-          <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
           <h3><%= meeting.user.username %></h3>
           <p><%= meeting.restaurant.address %></p>
           <p><%= meeting.meet_time.strftime("%H:%M")%></p>

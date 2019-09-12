@@ -10,6 +10,12 @@ class GuestsController < ApplicationController
     end
   end
 
+  def destroy
+      @guest = Guest.find(params[:id])
+      @guest.destroy
+      redirect_to meetings_path
+  end
+
   def guest_params
     params.require(:guest).permit(:meeting_id, :user_id)
   end

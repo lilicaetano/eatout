@@ -1,5 +1,5 @@
 class Meeting < ApplicationRecord
   belongs_to :user
   belongs_to :restaurant
-  has_many :guests
+  has_many :guests, dependent: :destroy
 end
