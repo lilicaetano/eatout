@@ -24,7 +24,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
   end
 
-  def map
-
+  def meetings
+    @restaurant = Restaurant.find(params[:id])
+    @meetings = Meeting.where(restaurant: @restaurant)
   end
 end

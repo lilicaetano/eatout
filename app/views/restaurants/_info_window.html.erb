@@ -2,7 +2,7 @@
   <h3><%= restaurant.name %></h3>
   <p><%= restaurant.address %></p>
   <% if meetings_available %>
-    <%= link_to "Meet someone here now", restaurant_path(restaurant), class: "btn btn-info my-1"%>
+    <%= link_to "Meet someone here now", available_meetings_path(restaurant), class: "btn btn-info my-1"%>
   <% end %>
   <%= link_to "Create a new meeting spot", restaurant_path(restaurant), class: "btn btn-info my-1" %>
 </div>
