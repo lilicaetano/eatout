@@ -4,6 +4,7 @@
     <%= @meeting.restaurant.name %>
     <br>
     <%= @meeting.user.username %>
+    <%= cl_image_tag @meeting.user.photo, class: "avatar" %>
   </div>
   <div
   id="map"
