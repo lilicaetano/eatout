@@ -6,7 +6,10 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save!
-      redirect_to meetings_path
+      @chat_room = ChatRoom.new(guest: @guest)
+      if @chat_room.save!
+        redirect_to meetings_path
+      end
     end
   end
 
@@ -16,7 +19,10 @@ class GuestsController < ApplicationController
       redirect_to meetings_path
   end
 
+  private
+
   def guest_params
     params.require(:guest).permit(:meeting_id, :user_id)
   end
+
 end

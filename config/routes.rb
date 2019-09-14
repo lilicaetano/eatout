@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show]
   resources :meetings, only: [:index, :show, :create, :new, :destroy]
   resources :guests
-  resources :chat_rooms, only: [ :show ] do
+  resources :chat_rooms, only: [ :show, :new ] do
   resources :messages, only: [ :create ]
   end
 end
