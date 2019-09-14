@@ -1,13 +1,13 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.geocoded
-    meetingPlaces = Restaurant.joins(:meetings).uniq
+    @meetingPlaces = Restaurant.joins(:meetings).uniq
 
     @markers = @restaurants.map do |restaurant|
-      if meetingPlaces.include?(restaurant)
+      if @meetingPlaces.include?(restaurant)
           img = helpers.asset_url('green-pin.png')
           meetings_available = true
-          @own_meeting = own_meeting_check(restaurant)
+          own_meeting = own_meeting_check(restaurant)
         else
           img = helpers.asset_url('pink-map-pin.png')
           meetings_available = false
@@ -18,7 +18,7 @@ class RestaurantsController < ApplicationController
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         image_url: helpers.asset_url(img),
-        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant, meetings_available: meetings_available })
+        infoWindow: render_to_string(partial: "info_window", locals: { restaurant: restaurant, meetings_available: meetings_available, own_meeting: own_meeting })
       }
 
     end
