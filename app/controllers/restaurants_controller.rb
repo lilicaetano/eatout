@@ -4,10 +4,10 @@ class RestaurantsController < ApplicationController
     meetingPlaces = Restaurant.joins(:meetings).uniq
     @markers = @restaurants.map do |restaurant|
       if meetingPlaces.include?(restaurant)
-          img = helpers.asset_url('pink-map-pin.png')
+          img = helpers.asset_url('green-pin.png')
           meetings_available = true
         else
-          img = helpers.asset_url('map-pin.png')
+          img = helpers.asset_url('pink-map-pin.png')
           meetings_available = false
       end
       {

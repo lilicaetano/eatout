@@ -37,9 +37,9 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      console.log(marker.lat, 'lat');
+      // console.log(marker.lat, 'lat');
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-      console.log(marker, 'marker')
+      // console.log(marker, 'marker')
       const element = document.createElement('div');
       element.className = 'marker';
       element.style.backgroundImage = `url('${marker.image_url}')`;
