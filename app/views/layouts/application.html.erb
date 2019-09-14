@@ -19,6 +19,7 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   <% unless controller_name == "pages" || controller_name == "sessions"%>
+    <div class="height-fix"></div>
     <%= render 'shared/footer' %>
   <% end %>
    <%= yield :after_js %>
