@@ -2,7 +2,7 @@
   <h3><%= restaurant.name %></h3>
   <p><%= restaurant.address %></p>
   <% if meetings_available %>
-    <% if @own_meeting %>
+    <% if own_meeting %>
       <h4>You have a meeting open here!</h4>
     <% elsif %>
       <%= link_to "Meet someone here now", available_meetings_path(restaurant), class: "btn btn-info my-1"%>
