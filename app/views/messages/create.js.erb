@@ -12,4 +12,5 @@ function insertMessage(message) {
   // handle validation errors later
 <% else %>
   insertMessage('<%= j render "message", message: @message, user_is_messages_author: true %>');
+  scrollLastMessageIntoView();
 <% end %>
