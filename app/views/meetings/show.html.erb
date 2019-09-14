@@ -14,13 +14,13 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
   <br>
-  <div>
+  <div class='d-flex flex-column align-items-center'>
     <% if Guest.where(meeting: @meeting) == [] && @meeting.user != current_user %>
     <%= simple_form_for Guest.new do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :meeting_id, :value => params[:id] %>
       <%#= f.hidden_field :meet_time, :value => Date.today %>
-      <%= f.submit %>
+      <%= f.submit 'Join meeting', class: 'btn btn-info' %>
     <% end %>
       <%#= link_to 'Join the meeting!', guests,class: 'btn btn-info' %>
     <% end %>
