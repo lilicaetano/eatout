@@ -1,17 +1,22 @@
 class MeetingsController < ApplicationController
   def index
-    @meetings = Meeting.all
-    # add a where statement to only show meetings the User was involved in
+    @meetings = Meeting.where(user: current_user)
+    @user_guest = Guest.where(user: current_user)
+    @any_created_or_booked = @meetings + @user_guest
+
   end
 
   def show
     @meeting = Meeting.find(params[:id])
+    @guests = Guest.all
     @marker = [{
       lat: @meeting.restaurant.latitude,
       lng: @meeting.restaurant.longitude,
-      image_url: helpers.asset_url('pink-map-pin.png'),
+      image_url: helpers.asset_url('green-pin.png'),
       infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @meeting.restaurant})
     }]
+
+
   end
 
 
@@ -36,7 +41,7 @@ class MeetingsController < ApplicationController
       @meeting = Meeting.find(params[:id])
       @meeting.destroy
       redirect_to meetings_path
-    end
+  end
 
   private
 

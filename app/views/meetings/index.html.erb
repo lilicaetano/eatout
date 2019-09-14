@@ -1,27 +1,65 @@
 <div class='d-flex flex-column align-items-center'>
-  <h1>Your Meetings</h1>
-  <% if @meetings != [] %>
-  <div class='cards'>
-    <% @meetings.each do |meeting| %>
-      <div class = 'card-meeting p-3 my-1'>
-        <div class="card-meeting-text">
-          <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
-          <p><%= meeting.restaurant.address %></p>
-          <p><%= meeting.meet_time.strftime("%H:%M")%></p>
-        </div>
-        <div class='d-flex align-items-center flex-column'>
-          <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
-          <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
-          <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
-        </div>
-      </div>
-    <% end %>
-    </div>
-    <% else %>
+  <% if @any_created_or_booked == [] %>
     <div class='dflex text-center'>
       <h2 class='oh-no'>Oh no! You haven't booked anything yet!</h2>
-  <% end %>
-  <br>
-  <%= link_to 'View restaurants', restaurants_path, class: 'btn btn-info' %>
-</div>
+    </div>
+  <% else %>
+    <h1>Your Hosted Meetings</h1>
+      <div class='cards'>
+        <% if @meetings == [] %>
+          <h2>You're not a host of any meetings</h2>
+        <% else %>
 
+          <% @meetings.each do |meeting| %>
+            <div class = 'card-meeting p-3 my-1'>
+              <div class="card-meeting-text">
+                <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
+                <p><%= meeting.restaurant.address %></p>
+                <p><%= meeting.meet_time.strftime("%H:%M")%></p>
+              </div>
+              <div class='d-flex align-items-center flex-column'>
+                <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
+                <% if Guest.where(meeting: meeting.id) != [] %>
+                  <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: Guest.where(meeting: meeting.id)[0].id)[0].id), class: 'btn btn-info' %>
+                <% end %>
+                <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
+                <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+
+    <h1>Meetings you are a guest of</h1>
+      <% if @user_guest == [] %>
+          <h2>You're not a guest of any meetings</h2>
+      <% else %>
+        <% @user_guest.each do |guest| %>
+          <div class = 'card-meeting p-3 my-1'>
+            <div class="card-meeting-text">
+              <h2 class= 'card-meeting-title'><%= guest.meeting.restaurant.name %></h2>
+              <p><%= guest.meeting.restaurant.address %></p>
+              <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
+              <h2>Hosted By</h2>
+              <p><%= guest.meeting.user.username %></p>
+              <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
+            </div>
+
+            <div class='d-flex align-items-center flex-column'>
+              <%= link_to 'Meeting Details', meeting_path(guest.meeting), class: 'btn btn-info' %>
+              <%=  %>
+              <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: guest)[0]), class: 'btn btn-info' %>
+              <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn btn-info' %>
+              <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn btn-warning' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <br>
+
+    <div>
+      <%= link_to 'View restaurants', restaurants_path, class: 'btn btn-info' %>
+    </div>
+</div>

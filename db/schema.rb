@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_31_124656) do
+ActiveRecord::Schema.define(version: 2019_09_14_135647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "guest_id"
+    t.index ["guest_id"], name: "index_chat_rooms_on_guest_id"
+  end
 
   create_table "guests", force: :cascade do |t|
     t.bigint "user_id"
@@ -34,6 +42,16 @@ ActiveRecord::Schema.define(version: 2019_08_31_124656) do
     t.index ["user_id"], name: "index_meetings_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.decimal "rating"
@@ -43,6 +61,7 @@ ActiveRecord::Schema.define(version: 2019_08_31_124656) do
     t.float "latitude"
     t.float "longitude"
     t.string "address"
+    t.string "photo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -58,6 +77,9 @@ ActiveRecord::Schema.define(version: 2019_08_31_124656) do
     t.string "username"
     t.integer "age"
     t.integer "rating"
+    t.string "photo"
+    t.string "interest"
+    t.string "food_preferences"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -66,4 +88,6 @@ ActiveRecord::Schema.define(version: 2019_08_31_124656) do
   add_foreign_key "guests", "users"
   add_foreign_key "meetings", "restaurants"
   add_foreign_key "meetings", "users"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
 end
