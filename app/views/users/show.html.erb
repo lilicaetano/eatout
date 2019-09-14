@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="card">
+<div class="card height-fix">
   <div class="profile-pic">
   <%= cl_image_tag current_user.photo, alt: "profile-pic", class: "card-avatar" %>
     <div class="profile-pic-info">
@@ -37,4 +37,6 @@
       <p><%= current_user.interest %></p>
     </div>
   </div>
+  <!-- <div style="height: 500px;"></div> -->
 </div>
+
