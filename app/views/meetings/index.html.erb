@@ -43,6 +43,7 @@
 
             <div class='d-flex align-items-center flex-column'>
               <%= link_to 'Meeting Details', meeting_path(guest.meeting), class: 'btn btn-info' %>
+              <%=# link_to 'Chat', chat_room_path %>
               <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn btn-info' %>
               <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn btn-warning' %>
             </div>
