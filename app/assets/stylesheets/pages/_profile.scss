@@ -1,11 +1,15 @@
 .card {
   // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 100%;
-  margin: auto;
+  // max-width: 100%;
+  // margin: auto;
   text-align: center;
-  max-height: 100%;
-  max-width: 100%;
+  // max-height: 100%;
+  // max-width: 100%;
   // background-color:
+}
+
+.height-fix {
+  min-height: calc(100vh + 10px) !important;
 }
 
 .card-avatar {
