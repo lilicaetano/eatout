@@ -1,19 +1,21 @@
-<div class="card-product">
-  <img src="https://images.pexels.com/photos/62097/pexels-photo-62097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-  <div class="card-product-infos">
-    <h2><%= @restaurant.name  %></h2>
-    <p><%= @restaurant.address %></p>
+<div class='d-flex flex-column align-items-center'>
+  <div class="card-product my-3">
+    <img src="https://images.pexels.com/photos/62097/pexels-photo-62097.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+    <div class="card-product-infos">
+      <h2><%= @restaurant.name  %></h2>
+      <p><%= @restaurant.address %></p>
 
-   <%= simple_form_for Meeting.new do |f| %>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.hidden_field :restaurant_id, :value => params[:id] %>
-      <%#= f.hidden_field :meet_time, :value => Date.today %>
-      <%= f.input :meet_time %>
-      <%= f.submit class: 'btn btn-info' %>
-    <% end %>
+     <%= simple_form_for Meeting.new do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :restaurant_id, :value => params[:id] %>
+        <%#= f.hidden_field :meet_time, :value => Date.today %>
+        <%= f.input :meet_time %>
+        <%= f.submit class: 'btn btn-info' %>
+      <% end %>
+    </div>
   </div>
+  <% if @has_meeting %>
+    <%= link_to 'Join a meeting here', available_meetings_path(@restaurant), class: 'btn btn-info my-1' %>
+  <% end %>
+  <%= link_to 'Back', restaurants_path, class: 'btn btn-info my-1' %>
 </div>
-<% if @has_meeting %>
-  <%= link_to 'Join a meeting here', available_meetings_path(@restaurant), class: 'btn btn-info' %>
-<% end %>
-<%= link_to 'Back', restaurants_path, class: 'btn btn-info' %>
