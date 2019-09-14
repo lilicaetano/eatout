@@ -2,10 +2,9 @@
 
 <div class="card">
   <div class="profile-pic">
-  <%= cl_image_tag current_user.photo, alt: "John", class: "card-avatar" %>
+  <%= cl_image_tag current_user.photo, alt: "profile-pic", class: "card-avatar" %>
     <div class="profile-pic-info">
-      <h1>John Doe</h1>
-      <p class="job-title">Graphic Designer, London</p>
+      <h1><%= current_user.first_name %></h1>
       <div class="profile-pic-rating">
         <p>Rating</p>
         <i class="fas fa-star"></i>
@@ -25,7 +24,7 @@
           <i class="far fa-edit"></i>
           <% end %>
         </div>
-        <p>My favourite food is Japanese, Thai or anything East Asian. Lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+        <p><%= current_user.food_preferences %></p>
       </div>
     </div>
     <div class="interests-card">
@@ -35,12 +34,7 @@
           <i class="far fa-edit"></i>
         <% end %>
       </div>
-      <p>I am interested in web design and technology. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+      <p><%= current_user.interest %></p>
     </div>
-  </div>
-  <div class="favicons">
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
   </div>
 </div>
