@@ -38,6 +38,7 @@
               <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
               <h2>Hosted By</h2>
               <p><%= guest.meeting.user.username %></p>
+              <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
             </div>
 
             <div class='d-flex align-items-center flex-column'>

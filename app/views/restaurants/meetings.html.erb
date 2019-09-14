@@ -5,6 +5,7 @@
       <div class = 'card-meeting p-3 my-1'>
         <div class="card-meeting-text">
           <h3><%= meeting.user.username %></h3>
+          <%= link_to cl_image_tag(meeting.user.photo), user_path(meeting.user), class: "avatar-link-large" %>
           <p><%= meeting.restaurant.address %></p>
           <p><%= meeting.meet_time.strftime("%H:%M")%></p>
         </div>
@@ -15,4 +16,6 @@
       </div>
     <% end %>
   </div>
+  <%= link_to 'Back to map', restaurants_path, class: 'btn btn-info' %>
+
 </div>
