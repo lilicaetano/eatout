@@ -3,6 +3,7 @@ class MeetingsController < ApplicationController
     @meetings = Meeting.where(user: current_user)
     @user_guest = Guest.where(user: current_user)
     @any_created_or_booked = @meetings + @user_guest
+
   end
 
   def show
