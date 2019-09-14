@@ -19,7 +19,7 @@
               </div>
               <div class='d-flex align-items-center flex-column'>
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
-                <% if Guest.where(meeting: meeting.id) %>
+                <% if Guest.where(meeting: meeting.id) != [] %>
                   <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: Guest.where(meeting: meeting.id)[0].id)[0].id), class: 'btn btn-info' %>
                 <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
