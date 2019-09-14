@@ -27,6 +27,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @has_meeting = Restaurant.joins(:meetings).uniq.include?(@restaurant)
   end
 
   def meetings
