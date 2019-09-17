@@ -19,6 +19,9 @@
               </div>
               <div class='d-flex align-items-center flex-column'>
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
+                <% if Guest.where(meeting: meeting.id) != [] %>
+                  <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: Guest.where(meeting: meeting.id)[0].id)[0].id), class: 'btn btn-info' %>
+                <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
                 <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
               </div>
@@ -43,7 +46,8 @@
 
             <div class='d-flex align-items-center flex-column'>
               <%= link_to 'Meeting Details', meeting_path(guest.meeting), class: 'btn btn-info' %>
-              <%=# link_to 'Chat', chat_room_path %>
+              <%=  %>
+              <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: guest)[0]), class: 'btn btn-info' %>
               <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn btn-info' %>
               <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn btn-warning' %>
             </div>

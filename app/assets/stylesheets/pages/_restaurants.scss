@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   margin: 10px;
+  border-radius: 8px;
 }
 
 .nav-pills {
@@ -13,6 +14,13 @@
   background: #e5e5e5;
   border-radius: 0.25rem;
   padding: 2px;
+}
+
+.card-restaurant-infos {
+  padding: 8px 24px;
+  .btn {
+    margin-top: 8px;
+  }
 }
 
 .card-restaurant img {
@@ -38,3 +46,12 @@
 .card-restaurant .card-restaurant-infos-infos {
   padding: 16px;
 }
+
+.title {
+  text-align: center;
+  padding-top: 8px;
+  font-weight: strong;
+  box-shadow: 2px;
+}
+
+
