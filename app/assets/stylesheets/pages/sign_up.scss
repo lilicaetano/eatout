@@ -1,26 +1,17 @@
-// .wrapper{
-//   width:100%;
-//   height:100vh;
-//   display:flex;
-//   align-items: center;
 
-// }
-
-.home{
-  display:flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.text{
+.btn-green{
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 5rem;
-  float-right: 30px;
-  font-weight: bold;
-  align-items: center;
-  margin: 0;
+  width: 200px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  background: #1EDD88;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-size: 25px;
+  &:hover {
+    color: #EC9B3B !important;
+    text-decoration: none;
+  }
 }
 
 .text h2{
@@ -32,6 +23,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .form-inputs{
@@ -40,4 +32,5 @@
   justify-content: space-around;
   align-items: center;
   color: white;
+
 }
