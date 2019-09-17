@@ -8,7 +8,8 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
+
   </head>
   <body>
   <% unless controller_name == "pages" %>
@@ -16,15 +17,18 @@
   <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
- 
+
+
   <% unless controller_name == "pages" || controller_name == "sessions" || controller_name == "registrations"%>
 
     <div class="height-fix"></div>
- 
+
     <%= render 'shared/footer' %>
   <% end %>
-   <%= yield :after_js %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+
+  <%= yield :after_js %>
   </body>
 </html>

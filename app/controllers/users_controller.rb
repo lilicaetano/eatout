@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
   def show
+    total_rating = 0
     @user = User.find(params[:id])
+
+    if Review.where(user: @user).count > 0
+      @ratings = Review.where(user: @user).each do |review|
+        total_rating += review.rating
+      end
+      @average_rating = total_rating / Review.where(user: @user).count
+    end
   end
 
   # def update
