@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'restaurants/:id/meetings', to: 'restaurants#meetings', as: 'available_meetings'
   # get 'restaurants/map', to: 'restaurants#map'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :restaurants, only: [:index, :show]
+  resources :restaurants, only: [:index, :show, :new, :create]
   resources :meetings, only: [:index, :show, :create, :new, :destroy]
   resources :guests
   resources :chat_rooms, only: [ :show , :index] do
