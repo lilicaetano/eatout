@@ -20,6 +20,8 @@
               <div class='d-flex align-items-center flex-column'>
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
+                  <h3>Your guest is:</h3>
+                  <%= link_to Guest.where(meeting: meeting.id)[0].user.username, user_path(Guest.where(meeting: meeting.id)[0].user) %>
                   <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: Guest.where(meeting: meeting.id)[0].id)[0].id), class: 'btn btn-info' %>
                 <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
@@ -39,8 +41,8 @@
               <h2 class= 'card-meeting-title'><%= guest.meeting.restaurant.name %></h2>
               <p><%= guest.meeting.restaurant.address %></p>
               <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
-              <h2>Hosted By</h2>
-              <p><%= guest.meeting.user.username %></p>
+              <h3>Hosted by:</h3>
+              <%= link_to guest.meeting.user.username, user_path(guest.meeting.user) %>
               <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
             </div>
 
