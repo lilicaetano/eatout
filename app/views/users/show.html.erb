@@ -4,9 +4,9 @@
 
 <div class="card">
   <div class="profile-pic">
-  <%= cl_image_tag current_user.photo, alt: "profile-pic", class: "card-avatar" %>
+  <%= cl_image_tag @user.photo, alt: "profile-pic", class: "card-avatar" %>
     <div class="profile-pic-info">
-      <h1><%= current_user.first_name %></h1>
+      <h1><%= @user.first_name %></h1>
       <div class="profile-pic-rating">
         <% if @average_rating %>
           <% @average_rating.times do |i| %>
@@ -24,21 +24,25 @@
       <div class="interests-card">
         <div class="card-title-edit">
           <h2>Food Preferences</h2>
-          <%= link_to edit_user_registration_path do %>
-          <i class="far fa-edit"></i>
+          <% if @user == current_user %>
+            <%= link_to edit_user_registration_path do %>
+            <i class="far fa-edit"></i>
+            <% end %>
           <% end %>
         </div>
-        <p><%= current_user.food_preferences %></p>
+        <p><%= @user.food_preferences %></p>
       </div>
     </div>
     <div class="interests-card">
       <div class="card-title-edit">
         <h2>Interests</h2>
-        <%= link_to edit_user_registration_path do %>
-          <i class="far fa-edit"></i>
-        <% end %>
+        <% if @user == current_user %>
+            <%= link_to edit_user_registration_path do %>
+            <i class="far fa-edit"></i>
+            <% end %>
+          <% end %>
       </div>
-      <p><%= current_user.interest %></p>
+      <p><%= @user.interest %></p>
     </div>
   </div>
 </div>
