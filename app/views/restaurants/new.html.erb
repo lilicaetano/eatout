@@ -1,1 +1,13 @@
 <h1>New Restaurant</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      <%= simple_form_for @restaurant do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :photo %>
+        <%= f.submit "Add restaurant" %>
+      <% end %>
+    </div>
+  </div>
+</div>
