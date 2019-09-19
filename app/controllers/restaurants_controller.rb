@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.geocoded
+    @restaurants = Restaurant.geocoded.order(created_at: :desc)
     @meetingPlaces = Restaurant.joins(:meetings).uniq
 
     @markers = @restaurants.map do |restaurant|
@@ -22,7 +22,19 @@ class RestaurantsController < ApplicationController
       }
 
     end
+  end
 
+  def new
+    @restaurant = Restaurant.new
+  end
+
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      redirect_to restaurants_path(new: true)
+    else
+      render :new
+    end
   end
 
   def show
@@ -36,6 +48,10 @@ class RestaurantsController < ApplicationController
   end
 
   private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :address, :photo)
+  end
 
   def own_meeting_check(restaurant)
     @user_meetings = Meeting.where(user: current_user)
