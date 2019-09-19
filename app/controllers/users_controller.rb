@@ -9,6 +9,8 @@ class UsersController < ApplicationController
       end
       @average_rating = total_rating / Review.where(user: @user).count
     end
+
+    @reviews = Review.where(user: @user)
   end
 
   # def update
