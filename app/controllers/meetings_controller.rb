@@ -15,8 +15,6 @@ class MeetingsController < ApplicationController
       image_url: helpers.asset_url('green-pin.png'),
       infoWindow: render_to_string(partial: "info_window", locals: { restaurant: @meeting.restaurant})
     }]
-
-
   end
 
 
