@@ -6,7 +6,7 @@ class GuestsController < ApplicationController
   def create
     @guest = Guest.new(guest_params)
     if @guest.save!
-      @chat_room = ChatRoom.new(guest: @guest)
+      @chat_room = ChatRoom.new(guest: @guest, name: "Meeting with #{Meeting.find_by(id: @guest.meeting_id).user.username} at #{Meeting.find_by(id: @guest.meeting_id).restaurant.name}")
       if @chat_room.save!
         redirect_to meetings_path
       end
