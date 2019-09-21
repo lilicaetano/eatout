@@ -1,9 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
 
-    <%= image_tag "mango_logo.jpg", alt: "Logo", class: "navbar-brand" %>
-
-
+    <%#= image_tag "mango_logo.jpg", alt: "Logo", class: "navbar-brand" %>
+    <%= link_to user_path(current_user.id) do %>
+    <%= cl_image_tag current_user.photo, class: "avatar" %>
+    <% end %>
+  <p class="title">Mango</p>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,7 +19,7 @@
           <%= link_to "Home", restaurants_path, class: "nav-link" %>
         </li>
         <li class="nav-item active"> <%= link_to "Profile", user_path(current_user.id), class: "nav-link" %>
-          <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
       <% else %>
