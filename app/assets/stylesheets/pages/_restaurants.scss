@@ -86,13 +86,15 @@
 
 .nav-item{
   background-color: #F6F6F6;
-  &:hover {
-    color: #EC9B3B;
-  }
 }
 
 .nav-link{
   color: #EC9B3B;
+}
+
+.banner-map-tab.nav-link.active {
+    background-color: #EC9B3B;
+
 }
 
 
