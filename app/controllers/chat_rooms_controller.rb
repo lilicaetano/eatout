@@ -7,8 +7,12 @@ class ChatRoomsController < ApplicationController
       @chat_rooms << ChatRoom.find_by(guest: guest)
     end
     @meetings.each do |meeting|
-      @chat_rooms << ChatRoom.find_by(guest: Guest.find_by(meeting: meeting))
+      guestCheck = ChatRoom.find_by(guest: Guest.find_by(meeting: meeting))
+      unless guestCheck.nil?
+        @chat_rooms << guestCheck
+      end
     end
+
   end
 
   def show
