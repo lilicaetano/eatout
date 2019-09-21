@@ -8,7 +8,8 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     # @guest = Guest.new(user: User.find(params[:guest].to_i), meeting: Meeting.new(params[:meeting].to_i))
     if @guest.save!
-      @chat_room = ChatRoom.new(guest: @guest, name: "Meeting with #{Meeting.find_by(id: @guest.meeting_id).user.username} at #{Meeting.find_by(id: @guest.meeting_id).restaurant.name}")
+      meeting = Meeting.find_by(id: @guest.meeting_id)
+      @chat_room = ChatRoom.new(guest: @guest, name: "#{meeting.restaurant.name}, due to start at #{meeting.meet_time.strftime("%H:%M")}")
       if @chat_room.save!
         redirect_to meetings_path
       end
