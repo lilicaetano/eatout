@@ -1,10 +1,13 @@
 class ChatRoomsController < ApplicationController
   def index
-    @guests = Guest.where(user: current_user)
-
+    @meetings = Meeting.where(user: current_user)
+    @user_guest = Guest.where(user: current_user)
     @chat_rooms = []
-    @guests.each do |guest|
+    @user_guest.each do |guest|
       @chat_rooms << ChatRoom.find_by(guest: guest)
+    end
+    @meetings.each do |meeting|
+      @chat_rooms << ChatRoom.find_by(guest: Guest.find_by(meeting: meeting))
     end
   end
 

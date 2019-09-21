@@ -21,8 +21,8 @@
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn btn-info' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
                   <h3>Your guest is:</h3>
-                  <%= link_to Guest.where(meeting: meeting.id)[0].user.username, user_path(Guest.where(meeting: meeting.id)[0].user) %>
-                  <%= link_to 'Chat', chat_room_path(ChatRoom.where(guest: Guest.where(meeting: meeting.id)[0].id)[0].id), class: 'btn btn-info' %>
+                  <%= link_to Guest.find_by(meeting: meeting.id).user.username, user_path(Guest.find_by(meeting: meeting.id).user) %>
+                  <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn btn-info' %>
                 <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn btn-info' %>
                 <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-warning' %>
