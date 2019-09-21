@@ -9,6 +9,19 @@
 
 }
 
+.btn-createMetting{
+ color: #EC9B3B;
+  width: 50px;
+  padding: 5px 20px;
+  border-radius: 15px;
+  background: #F6F6F6;
+  border: 0.5px solid #EC9B3B;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-size: 20px;
+  text-decoration:none;
+}
+
 .card-meeting {
   .card-meeting-text {
     display: flex;
