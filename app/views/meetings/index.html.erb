@@ -42,7 +42,7 @@
               <p><%= guest.meeting.restaurant.address %></p>
               <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
               <h3>Hosted by:</h3>
-              <%= link_to guest.meeting.user.username, user_path(guest.meeting.user) %>
+              <%= link_to guest.meeting.user.first_name, user_path(guest.meeting.user) %>
               <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
             </div>
 
