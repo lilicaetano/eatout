@@ -22,6 +22,7 @@
   <% if @user != current_user %>
     <%= link_to 'Leave a review', user_review_path(@user) %>
   <% end %>
+
   <div class="information-card">
     <div class="information-card-buffer">
       <div class="interests-card">
@@ -36,29 +37,32 @@
         <p><%= @user.interest %></p>
       </div>
     </div>
-    <div class="interests-card">
-      <div class="card-title-edit">
-        <h2>Food preferences</h2>
-        <% if @user == current_user %>
-            <%= link_to edit_user_registration_path do %>
-            <i class="far fa-edit"></i>
-            <% end %>
-          <% end %>
-      </div>
-      <p><%= @user.food_preferences %></p>
-    </div>
-  </div>
-    <div class="interests-card">
+    <div class="information-card-buffer">
+      <div class="interests-card">
         <div class="card-title-edit">
-          <h2>Food allergies and intolerances</h2>
+          <h2>Food preferences</h2>
           <% if @user == current_user %>
               <%= link_to edit_user_registration_path do %>
               <i class="far fa-edit"></i>
               <% end %>
             <% end %>
         </div>
+        <p><%= @user.food_preferences %></p>
+      </div>
+    </div>
+    <div class="information-card-buffer">
+      <div class="interests-card">
+        <div class="card-title-edit">
+          <h2>Food allergies and intolerances</h2>
+          <% if @user == current_user %>
+            <%= link_to edit_user_registration_path do %>
+              <i class="far fa-edit"></i>
+            <% end %>
+          <% end %>
+        </div>
         <%= @user.food_allergens %>
       </div>
     </div>
   </div>
 </div>
+
