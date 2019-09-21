@@ -4,7 +4,9 @@ class GuestsController < ApplicationController
   end
 
   def create
+    # raise
     @guest = Guest.new(guest_params)
+    # @guest = Guest.new(user: User.find(params[:guest].to_i), meeting: Meeting.new(params[:meeting].to_i))
     if @guest.save!
       @chat_room = ChatRoom.new(guest: @guest)
       if @chat_room.save!

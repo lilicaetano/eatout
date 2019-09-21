@@ -15,6 +15,14 @@
   data-markers="<%= @marker.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+  <div>
+    <% @meeting.guests.each do |guest| %>
+      <%= link_to user_path(guest.user_id) do %>
+        <p><%= User.find(guest.user_id).first_name %></p>
+        <%= cl_image_tag(User.find(guest.user_id).photo, width: 40, height: 40, crop: :fill) %>
+      <% end %>
+    <% end %>
+  </div>
   <br>
   <div class='d-flex flex-column align-items-center'>
     <% if Guest.where(meeting: @meeting) == [] && @meeting.user != current_user %>
@@ -24,7 +32,7 @@
       <%#= f.hidden_field :meet_time, :value => Date.today %>
       <%= f.submit 'Join meeting', class: 'btn btn-info' %>
     <% end %>
-      <%#= link_to 'Join the meeting!', guests,class: 'btn btn-info' %>
+
     <% end %>
     <%= link_to 'Meetings list', meetings_path, class: 'btn btn-info' %>
   </div>
