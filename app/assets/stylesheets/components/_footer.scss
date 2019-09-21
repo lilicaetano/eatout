@@ -14,11 +14,14 @@
 
 .footer-links button {
   padding: 1rem 3rem;
+ padding: 1rem 3rem;
+
   background-color:#fefefe;
   color:#ec9b3b;
   width: 8rem;
   align-items: center;
   overflow: hidden;
+
 }
 
 .footer-links button svg,
@@ -27,6 +30,7 @@
   font-size: 2rem;
   max-height: 2rem;
   max-width: 8rem;
+
 }
 
 .footer {
@@ -35,4 +39,6 @@
   position: fixed;
   bottom: 0;
 
+
 }
+
