@@ -18,7 +18,10 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/lordmoomoo/ck0705ics06cn1cm50aeuz50k'
     });
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
+    if (window.location.href.includes("restaurants")) {
+      map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
+    };
+
     map.addControl(new mapboxgl.GeolocateControl({
       positionOptions: {
         enableHighAccuracy: true
