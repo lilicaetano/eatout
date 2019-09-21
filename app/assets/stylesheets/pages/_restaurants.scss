@@ -62,11 +62,13 @@
   padding: 16px;
 }
 
-.title {
-  text-align: center;
-  padding-top: 8px;
-  font-weight: strong;
-  box-shadow: 2px;
+ .title {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+
 }
 
 .btn-createMetting{
@@ -79,7 +81,23 @@
   text-align: center;
   transition: background 0.3s ease;
   font-size: 20px;
+  text-decoration:none;
+}
+
+.nav-item{
+  background-color: #F6F6F6;
+  &:hover {
+    color: #EC9B3B;
+  }
+}
+
+.nav-link{
+  color: #EC9B3B;
 }
 
 
+
+a:hover {
+  color: #C2C2C2;
+}
 
