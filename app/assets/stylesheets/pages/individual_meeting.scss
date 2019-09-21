@@ -1,0 +1,41 @@
+.card-restaurant-info {
+  overflow: hidden;
+  width: 360px;
+  height: 120px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border-radius: 8px;
+
+  .h1 {
+    color: black;
+  }
+
+  .p {
+    color: black;
+  }
+}
+
+.host-card-info {
+  overflow: hidden;
+  width: 360px;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.guest-card-info {
+  overflow: hidden;
+  width: 360px;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  border-radius: 8px;
+}
