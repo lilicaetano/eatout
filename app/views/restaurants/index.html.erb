@@ -31,9 +31,9 @@
           <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
           <% if @meetingPlaces.include?(restaurant) %>
             <%= link_to 'Meetings open now', available_meetings_path(restaurant), class: 'btn-MeetingOpen' %><br><br>
-            <%= link_to 'Create meeting', restaurant_path(restaurant), class: 'btn-createMetting' %>
+            <%= link_to 'Create meeting', restaurant_path(restaurant), class: 'btn-createMeeting' %>
           <% else %><br>
-            <%= link_to 'Create meeting', restaurant_path(restaurant), class: 'btn-createMetting' %>
+            <%= link_to 'Create meeting', restaurant_path(restaurant), class: 'btn-createMeeting' %>
           <% end %>
         </div>
       </div>

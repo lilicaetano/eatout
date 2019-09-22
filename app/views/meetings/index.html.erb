@@ -1,13 +1,13 @@
 <div class='d-flex flex-column align-items-center'>
   <% if @any_created_or_booked == [] %>
     <div class='dflex text-center'>
-      <h2 class='oh-no'>Oh no! You haven't booked anything yet!</h2>
+      <h2 class='oh-no'>Oh no! No current meetings!</h2>
     </div>
   <% else %>
     <h1>Your Hosted Meetings</h1>
       <div class='cards'>
         <% if @meetings == [] %>
-          <h2>You're not a host of any meetings</h2>
+          <h3>You're not a host of any meetings</h3>
         <% else %>
 
           <% @meetings.each do |meeting| %>
@@ -31,9 +31,9 @@
           <% end %>
         <% end %>
 
-    <h1>Meetings you are a guest of</h1>
+    <h1>Meetings: Guest </h1>
       <% if @user_guest == [] %>
-          <h2>You're not a guest of any meetings</h2>
+          <h3>You're not a guest of any meetings</h3>
       <% else %>
         <% @user_guest.each do |guest| %>
           <div class = 'card-meeting p-3 my-1'>
@@ -59,9 +59,9 @@
     </div>
   <% end %>
 
-  <br>
+  <br><br>
 
     <div>
-      <%= link_to 'View restaurants', restaurants_path, class: 'btn btn-info' %>
+      <%= link_to 'View restaurants', restaurants_path, class: 'btn-createMeeting' %>
     </div>
 </div>
