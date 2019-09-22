@@ -40,10 +40,10 @@
 }
 
 .profile-pic-rating {
-  color: black;
-  background-color: white;
+  color: #EC9B3B;
+  background-color: #F6F6F6;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   flex-wrap: nowrap;
   p {
@@ -62,19 +62,18 @@
   padding: 16px;
   padding-top: 14px;
   text-align: left;
-  background-color: #FCEAF3;
+  background-color: #F6F6F6;
   box-shadow: 2px;
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
   p {
-    font-size: 16px;
-    color: black;
-    text-shadow: none;
+    font-size: 18px;
+    color: #EC9B3B;
   }
   h2 {
     font-size: 24px;
     font-weight: 100%;
-    color: #353533;
+    color: #EC9B3B;
   }
 }
 
@@ -82,18 +81,10 @@
   padding-bottom: 16px;
 }
 
-.favicons {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  justify-content: space-evenly;
-  padding-bottom: 4px;
-  padding-top: 0px;
-  i {
-    color: #FF768C;
-    width: 36px;
-    height: 36px;
-  }
+
+.far {
+   color: #EC9B3B;
+
 }
 
 a {
