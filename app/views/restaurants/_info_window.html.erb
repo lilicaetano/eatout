@@ -7,10 +7,10 @@
     <% if own_meeting %>
       <h4>You have a meeting open here!</h4>
     <% elsif %>
-      <%= link_to "Meet someone here now", available_meetings_path(restaurant), class: "btn btn-info my-1"%>
+      <%= link_to "Meet someone here now", available_meetings_path(restaurant), class: "btn-createMeeting my-1"%>
     <% end %>
   <% end %>
-  <%= link_to "Create a new meeting spot", restaurant_path(restaurant), class: "btn btn-info my-1" %>
+  <%= link_to "Create a new meeting spot", restaurant_path(restaurant), class: "btn-createMeeting my-1" %>
 </div>
 
 
