@@ -26,7 +26,7 @@
     <div id="list" class="tab-pane fade">
       <% @restaurants.each do |restaurant| %>
       <div class="card-restaurant">
-        <%= cl_image_tag restaurant.photo %>
+        <%= image_tag restaurant.photo %>
         <div class="card-restaurant-infos">
           <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
           <% if @meetingPlaces.include?(restaurant) %>

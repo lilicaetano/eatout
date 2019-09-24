@@ -1,10 +1,25 @@
+.card-1 {
+  padding-top: 100px;
+  border-radius: 20px;
+}
+
+.card-title {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.meeting-button {
+  text-align: center;
+}
+
 .card-product {
   overflow: hidden;
-  height: 250px;
+  height: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 8px;
 }
 
 .card-product img {
@@ -14,7 +29,7 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
@@ -22,7 +37,7 @@
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
-  opacity: .7;
+  opacity: 0.7;
   margin-bottom: 0;
   margin-top: 8px;
   color: black;
@@ -30,4 +45,9 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.button-space {
+  padding-bottom: 12px;
+  align-items: center;
 }
