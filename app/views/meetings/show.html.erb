@@ -5,16 +5,23 @@
     <h1><%= @meeting.restaurant.name %></h1>
     <p><%= @meeting.restaurant.address %></p>
   </div>
-  <div class="host-card-info">
+  <div class="member-card-info">
     <%= link_to cl_image_tag(@meeting.user.photo), user_path(@meeting.user), class: "avatar-link-large" %>
-    <%= @meeting.user.first_name %>
-    <i class="fas fa-award"></i>
+    <div class="member-details" >
+    <h2><%= @meeting.user.first_name %></h2>
+    <p><%= @meeting.user.interest %></p>
+    </div>
   </div>
-  <div class="guest-card-info">
+  <div class="member-card-info">
     <% @meeting.guests.each do |guest| %>
-      <%= link_to user_path(guest.user_id) do %>
-        <%= cl_image_tag(User.find(guest.user_id).photo, width: 40, height: 40, crop: :fill) %>
-        <%= User.find(guest.user_id).first_name %>
+      <%= link_to user_path(guest.user_id), class: "member-link" do %>
+      <div class="avatar-link-large">
+        <%= cl_image_tag(User.find(guest.user_id).photo, crop: :fill) %>
+      </div>
+      <div class="member-details">
+        <h2><%= User.find(guest.user_id).first_name %></h2>
+        <p><%= User.find(guest.user_id).interest %></p>
+        </div>
       <% end %>
     <% end %>
   </div>
@@ -38,7 +45,7 @@
   ></div>
 
 
-  <div>
+  <div class="btn-create-meeting">
     <%= link_to 'Meetings list', meetings_path, class: 'btn-createMeeting' %>
   </div>
 </div>

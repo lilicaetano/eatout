@@ -3,39 +3,59 @@
   width: 360px;
   height: 120px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
   margin: 10px;
   border-radius: 8px;
-
-  .h1 {
-    color: black;
+  padding: 8px;
+  text-align: center;
+  background: #F6F6F6;
+  h1 {
+    color: #EC9B3B;
+    font-weight: bold;
   }
 
-  .p {
-    color: black;
+  p {
+    color: #757575;
+    text-shadow: none;
   }
 }
 
-.host-card-info {
+.member-card-info {
   overflow: hidden;
   width: 360px;
   height: 120px;
-  background: white;
+  background: rgba(250, 250, 250, 0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 8px;
+  margin: 8px;
+  img {
+    margin: 0 8px;
+  }
+  .member-details {
+    margin-left: 16px;
+    color: #EC9B3B;
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    p {
+      color: #757575;
+      font-size: 18px;
+      opacity: 1;
+      text-shadow: none;
+    }
+  }
 }
 
-.guest-card-info {
-  overflow: hidden;
-  width: 360px;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.member-link {
   display: flex;
   align-items: center;
-  margin: 10px;
-  border-radius: 8px;
+}
+
+.btn-create-meeting {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
