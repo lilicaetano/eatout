@@ -1,11 +1,12 @@
 <title>Mango - Not having a companion to eat with when out. </title>
 
-<div class='d-flex flex-column align-items-center info-window'>
+<div class='d-flex flex-column info-window text-center'>
   <h3><%= restaurant.name %></h3>
   <p><%= restaurant.address %></p>
+  <%= image_tag restaurant.photo %>
   <% if meetings_available %>
     <% if own_meeting %>
-      <h4>You have a meeting open here!</h4>
+      <h4><%= link_to "Your meeting here", meetings_path, class: "btn-createMeeting my-1"%></h4>
     <% elsif %>
       <%= link_to "Meet someone here now", available_meetings_path(restaurant), class: "btn-createMeeting my-1"%>
     <% end %>
