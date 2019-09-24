@@ -1,11 +1,13 @@
 <div class="row">
   <div class="col-12 col-md-3">
-    <% if @chat_rooms.count > 0 %>
-      <nav class="nav flex-column">
-        <% @chat_rooms.each do |chat_room| %>
-          <%= link_to chat_room.name, chat_room_path(chat_room), class: "nav-link room-nav-link" %>
-        <% end %>
-      </nav>
+    <div class="chat-index">
+      <% if @chat_rooms.count > 0 %>
+        <nav class="nav flex-column">
+          <% @chat_rooms.each do |chat_room| %>
+            <%= link_to chat_room.name, chat_room_path(chat_room), class: "nav-link room-nav-link" %>
+          <% end %>
+        </nav>
+      </div>
     <% else %>
       <div class="chatfont">
         The are no messages
