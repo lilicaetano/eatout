@@ -11,7 +11,7 @@
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :restaurant_id, :value => params[:id] %>
         <%#= f.hidden_field :meet_time, :value => Date.today %>
-        <%= f.input :meet_time %>
+        <%= f.input :meet_time, as: :time %>
         <%= f.submit class: 'btn btn-info' %>
       <% end %>
     </div>
