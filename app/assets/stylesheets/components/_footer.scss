@@ -8,7 +8,7 @@
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
-  background: #fefefe;
+  background: $white;
   z-index: 1000;
 }
 
@@ -16,7 +16,7 @@
   padding: 1rem 3rem;
  padding: 1rem 3rem;
 
-  background-color:#fefefe;
+  background-color: $white;
   color:#ec9b3b;
   width: 8rem;
   align-items: center;

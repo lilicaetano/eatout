@@ -1,7 +1,7 @@
 .messages {
   font-size: 14px;
   color: #868686;
-  background-color: #ffffff;
+  background-color: $white;
   padding: 20px;
   border: 1px solid #ececec;
   border-top: none;
@@ -34,7 +34,7 @@
 
 #create-message {
   padding: 10px;
-  background-color: #ffffff;
+  background-color: $white;
   margin-bottom: 20px;
   border: 1px solid #ececec;
 }
@@ -54,7 +54,7 @@ input.form-control {
 }
 .chat-header {
   background-color: #4F2F4C;
-  color: white;
+  color: $white;
   padding: 10px 20px;
   margin-top: 10px;
   h4 {
