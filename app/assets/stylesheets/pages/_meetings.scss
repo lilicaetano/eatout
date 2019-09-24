@@ -1,20 +1,20 @@
 .oh-no{
-  color: white;
+  color: $white;
   text-shadow: 1px 1px #F6F6F6;
 }
 
 .meetingH1 {
-  color: white;
+  color: $white;
   padding:20px;
 }
 
 h3.meetingGuest {
-  color: white;
+  color: $white;
 }
 
 .card-meeting {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border: 1px solid #ec9b3b;
   display: flex;
@@ -28,7 +28,7 @@ h3.meetingGuest {
   width: 200px;
   padding: 5px 10px;
   border-radius: 15px;
-  background: #F6F6F6;
+  background: $white;
   border: 0.5px solid #EC9B3B;
   text-align: center;
   transition: background 0.3s ease;
@@ -41,7 +41,7 @@ h3.meetingGuest {
   color: #EC9B3B;
   padding: 5px 20px;
   border-radius: 15px;
-  background: #F6F6F6;
+  background: $white;
   border: 0.5px solid #EC9B3B;
   text-align: center;
   transition: background 0.3s ease;
@@ -50,7 +50,7 @@ h3.meetingGuest {
 }
 
 .cancelbtn {
-  color: #F6F6F6;
+  color: $white;
   width: 200px;
   padding: 5px 20px;
   border-radius: 15px;
