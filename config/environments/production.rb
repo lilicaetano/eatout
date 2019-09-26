@@ -18,6 +18,8 @@ Rails.application.configure do
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
+  config.web_socket_server_url = "wss://action-cable-example.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://mango-social.herokuapp.com', 'http://mango-social.herokuapp.com']
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
