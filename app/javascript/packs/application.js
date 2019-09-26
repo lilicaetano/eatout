@@ -8,3 +8,12 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 initMapbox();
 initStarRating();
 initFakeNotify();
+
+
+import 'jquery'
+
+var img = $('#hello')
+img.hide();
+$('#unfurl-map').click(function(){
+  img.show();
+})
