@@ -1,7 +1,7 @@
 <div class='d-flex flex-column align-items-center'>
   <% if @any_created_or_booked == [] %>
     <div class='dflex text-center'>
-      <h2 class='oh-no'>Oh no! No current meetings!</h2>
+      <h2 class='oh-no'>No current meetings!</h2>
     </div>
   <% else %>
     <h1 class="meetingGuest">Hosted Meetings</h1>
@@ -26,7 +26,7 @@
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn-Meeting' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
                   <h3>Your guest is:</h3>
-                  <%= link_to Guest.find_by(meeting: meeting.id).user.username, user_path(Guest.find_by(meeting: meeting.id).user) %>
+                  <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
                   <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-Meeting' %>
                 <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-Meeting' %>
@@ -50,7 +50,7 @@
               <%= link_to guest.meeting.user.first_name, user_path(guest.meeting.user) %>
               <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
             </div>
-
+            <div id='fake-notification'></div>
             <div class='d-flex align-items-center flex-column'>
               <%= link_to 'Meeting Details', meeting_path(guest.meeting), class: 'btn-Meeting' %>
               <%=  %>
