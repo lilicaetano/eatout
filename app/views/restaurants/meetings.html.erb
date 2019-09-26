@@ -6,7 +6,7 @@
         <% @meetings.each do |meeting| %>
           <div class = 'card-meeting p-3 my-1'>
             <div class="card-meeting-text">
-              <h3><%= meeting.user.username %></h3>
+              <h3><%= meeting.user.first_name %></h3>
               <%= link_to cl_image_tag(meeting.user.photo), user_path(meeting.user), class: "avatar-link-large" %>
               <p><%= meeting.restaurant.address %></p>
               <p><%= meeting.meet_time.strftime("%H:%M")%></p>
