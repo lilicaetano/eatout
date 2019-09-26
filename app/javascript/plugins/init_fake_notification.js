@@ -1,15 +1,12 @@
 import 'jquery';
 
 const initFakeNotify = () => {
-  console.log('loaded')
-  let foo = document.getElementById('fake-notification');
+  let foo = $('#fake-notification');
   if (foo){
-    console.log('in');
     setTimeout(function(){
-      $('#fake-notification').html("ARRRRRRGGGHHH");
-    }, 10);
-
-    console.log('out');
+      foo.html('<h2>fooooo</h2>');
+      foo.class('')
+    }, 2);
   }
 }
 
