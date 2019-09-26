@@ -9,7 +9,7 @@
 }
 
 .fake {
-  color: #FE9A65;
+  color: #1EDD88;
   h3 {
     text-align: center;
   }
@@ -44,7 +44,7 @@
   padding: 5px 10px;
   border-radius: 15px;
   background: $white;
-  border: 0.5px solid #FE9A65;
+  border: 2px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 18px;
@@ -57,7 +57,7 @@
   padding: 3px 20px;
   border-radius: 15px;
   background: $white;
-  border: 0.8px solid #FE9A65;
+  border: 2px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 20px;
@@ -83,6 +83,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    h3 {
+      color: #8F3872;
+    }
   }
 
   p {
