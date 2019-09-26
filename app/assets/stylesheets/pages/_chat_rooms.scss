@@ -4,7 +4,7 @@
   margin: 0 auto;
   max-width: 36em;
   padding: 2em 0 0 0;
-  height: 200px;
+  height: 100%;
   width : 100%;
 }
 
@@ -29,7 +29,7 @@
 .messages {
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 3px;
-  height: 35em;
+  height: 25em;
   margin: 0 0 .5em;
   overflow-y: scroll;
   padding: .5em;
