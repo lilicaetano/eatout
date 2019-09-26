@@ -3,6 +3,11 @@
   text-shadow: 1px 1px #F6F6F6;
 }
 
+#hello {
+  width: 100vw;
+  margin-top: 10px;
+}
+
 .meetingH1 {
   color: $white;
   padding:28px;
@@ -52,6 +57,10 @@
   text-decoration:none;
 }
 
+.purple {
+  color: #8F3872;
+}
+
 .btn-createMeeting {
   color: #FE9A65;
   padding: 3px 20px;
@@ -60,7 +69,7 @@
   border: 2px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration:none;
 }
 
