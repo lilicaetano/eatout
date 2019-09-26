@@ -1,13 +1,6 @@
-.oh-no {
+.oh-no{
   color: $white;
   text-shadow: 1px 1px #F6F6F6;
-}
-
-.fake {
-  background-color: green;
-  border: 1px solid #ec9b3b;
-  border-radius: 10px;
-  color: $white;
 }
 
 .meetingH1 {
@@ -54,10 +47,10 @@
 
 .btn-createMeeting {
   color: #FE9A65;
-  padding: 5px 20px;
+  padding: 3px 20px;
   border-radius: 15px;
   background: $white;
-  border: 0.5px solid #FE9A65;
+  border: 0.8px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 20px;
