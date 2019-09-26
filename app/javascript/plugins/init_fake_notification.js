@@ -6,10 +6,10 @@ const initFakeNotify = () => {
     foo.hide();
     setTimeout(function(){
 
-      foo.append('<h2>fooooo</h2>');
+      foo.append('<h3>Your host has accepted your request to join!</h3>');
       foo.addClass('fake');
       foo.fadeIn(500);
-    }, 1000);
+    }, 7000);
   }
 }
 
