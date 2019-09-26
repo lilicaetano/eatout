@@ -26,7 +26,7 @@
                 <%= link_to 'Meeting Details', meeting_path(meeting), class: 'btn-Meeting' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
                   <h3>Your guest is:</h3>
-                  <%= link_to Guest.find_by(meeting: meeting.id).user.username, user_path(Guest.find_by(meeting: meeting.id).user) %>
+                  <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
                   <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-Meeting' %>
                 <% end %>
                 <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-Meeting' %>

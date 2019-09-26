@@ -1,6 +1,13 @@
-.oh-no{
+.oh-no {
   color: $white;
   text-shadow: 1px 1px #F6F6F6;
+}
+
+.fake {
+  background-color: green;
+  border: 1px solid #ec9b3b;
+  border-radius: 10px;
+  color: $white;
 }
 
 .meetingH1 {
