@@ -38,7 +38,18 @@ body {
   width: 200px;
   padding: 5px 20px;
   border-radius: 25px;
-  background: #FFD752;
+  background: #1EDD87;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-size: 25px;
+}
+
+.btn-white{
+  color: #1EDD87;
+  width: 200px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  background: $white;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 25px;
