@@ -6,7 +6,7 @@
     <p><%= @meeting.restaurant.address %></p>
   </div>
   <div class="member-card-info">
-    <%= link_to cl_image_tag(@meeting.user.photo), user_path(@meeting.user), class: "avatar-link-large" %>
+    <%= link_to cl_image_tag(@meeting.user.photo), user_path(@meeting.user), class: "profile-picture" %>
     <div class="member-details" >
     <h2><%= @meeting.user.first_name %></h2>
     <p><%= @meeting.user.interest %></p>
@@ -15,7 +15,7 @@
   <div class="member-card-info">
     <% @meeting.guests.each do |guest| %>
       <%= link_to user_path(guest.user_id), class: "member-link" do %>
-      <div class="avatar-link-large">
+      <div class="profile-picture">
         <%= cl_image_tag(User.find(guest.user_id).photo, crop: :fill) %>
       </div>
       <div class="member-details">
