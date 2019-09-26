@@ -59,3 +59,10 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+.profile-picture img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  margin: 0px;
+}
