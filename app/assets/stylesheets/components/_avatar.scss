@@ -28,8 +28,9 @@
 
 .avatar-link-large {
   img {
-    width: 56px;
-    height: 56px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
   }
 }
