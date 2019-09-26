@@ -15,7 +15,10 @@
             <%= f.hidden_field :restaurant_id, :value => params[:id] %>
             <%#= f.hidden_field :meet_time, :value => Date.today %>
             <%= f.input :meet_time, as: :time %>
-            <%= f.submit class: 'btn-createMeeting' %>
+            <div class="center">
+              <%= f.submit class: 'btn-createMeeting' %>
+
+            </div>
           <% end %>
         </div>
       </div>
