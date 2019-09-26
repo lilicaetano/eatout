@@ -1,8 +1,11 @@
 // Specific CSS for your home-page
 
 body {
-  background-image: url("mobliebbkg.jpg");
+  background-image: url("apppages.jpg");
   background-position: center;
+  background-image:cover;
+  background-repeat:no-repeat;
+  height: 100vh;
 }
 
 .wrapper{
@@ -78,5 +81,7 @@ a.btn-green:hover{
   color: #EC9B3B;
   text-decoration: none;
 }
+
+
 
 
