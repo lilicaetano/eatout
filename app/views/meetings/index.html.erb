@@ -8,9 +8,8 @@
     <h1 class="meetingGuest">My dates</h1>
       <div class='cards'>
         <% if @meetings == [] %>
-          <h3>You're not a host of any dates</h3>
+          <h3 class='meetingGuest px-3'>You're not a host of any dates</h3>
         <% else %>
-
           <% @meetings.each do |meeting| %>
             <div class = 'card-meeting p-3 my-1'>
               <div class="card-meeting-text">
@@ -28,7 +27,7 @@
               <div class='d-flex align-items-center flex-column'>
                 <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-Meeting' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
-                  <h3>Your guest is:</h3>
+                  <h3 class='purple'>Your guest is:</h3>
                   <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
                   <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-Meeting' %>
                 <% end %>
