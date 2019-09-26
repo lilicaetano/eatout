@@ -1,10 +1,9 @@
 <title>Mango - Not having a companion to eat with when out. </title>
 
 <div class="container">
-  <div class="row">
+  <div class="review">
     <div class="col-xs-4">
       <%= simple_form_for @review do |f| %>
-        <%= f.input :content %>
         <%= f.hidden_field :user_id, :value => params[:id] %>
         <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
         <%= f.submit "Send your review" %>
