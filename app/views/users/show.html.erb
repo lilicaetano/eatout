@@ -34,7 +34,7 @@
             <% end %>
           <% end %>
         </div>
-        <p><%= @user.interest %></p>
+        <p class="card-meeting-title"><%= @user.interest %></p>
       </div>
     </div>
     <div class="information-card-buffer">
@@ -47,17 +47,17 @@
               <% end %>
             <% end %>
         </div>
-        <p><%= @user.food_preferences %></p>
+        <p class="card-meeting-title"><%= @user.food_preferences %></p>
       </div>
     </div>
     <div class="information-card-buffer">
-      <div class="interests-card">
+      <!-- <div class="interests-card">
         <div class="card-title-edit">
           <h2>Food allergies and intolerances</h2>
           <% if @user == current_user %>
             <%= link_to edit_user_registration_path do %>
               <i class="far fa-edit"></i>
-            <% end %>
+            <% end %> -->
           <% end %>
         </div>
         <%= @user.food_allergens %>

@@ -28,7 +28,7 @@
       <div class="card-restaurant">
         <%= image_tag restaurant.photo %>
         <div class="card-restaurant-infos">
-          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <h3 class="rest-title"><%= restaurant.name %></h3>
           <% if @meetingPlaces.include?(restaurant) %>
             <%= link_to 'Meetings open now', available_meetings_path(restaurant), class: 'btn-MeetingOpen' %><br><br>
             <%= link_to 'Create meeting', restaurant_path(restaurant), class: 'btn-createMeeting' %>
