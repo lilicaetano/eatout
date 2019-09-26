@@ -1,5 +1,5 @@
 .card-1 {
-  padding-top: 100px;
+  padding-top: 80px;
   border-radius: 20px;
 }
 
@@ -42,6 +42,8 @@
   margin-bottom: 0;
   margin-top: 8px;
   color: black;
+  font-weight: bold;
+  text-shadow: none;
 }
 
 .card-product .card-product-infos {
@@ -51,4 +53,9 @@
 .button-space {
   padding-bottom: 12px;
   align-items: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
