@@ -12,31 +12,39 @@
 
 .meetingH1 {
   color: $white;
-  padding:20px;
+  padding:28px;
 }
 
-h3.meetingGuest {
+.meetingGuest {
   color: $white;
+}
+
+.card-meeting-title {
+  color: #8F3872;
+
+
 }
 
 .card-meeting {
   overflow: hidden;
   background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 1px solid #ec9b3b;
+  border: 1px solid #FE9A65;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 25px;
+  border-radius:20px;
 
 }
 
 .btn-Meeting {
- color: #EC9B3B;
+ color: #FE9A65;
   width: 200px;
   padding: 5px 10px;
   border-radius: 15px;
   background: $white;
-  border: 0.5px solid #EC9B3B;
+  border: 0.5px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 18px;
@@ -45,11 +53,11 @@ h3.meetingGuest {
 }
 
 .btn-createMeeting {
-  color: #EC9B3B;
+  color: #FE9A65;
   padding: 5px 20px;
   border-radius: 15px;
   background: $white;
-  border: 0.5px solid #EC9B3B;
+  border: 0.5px solid #FE9A65;
   text-align: center;
   transition: background 0.3s ease;
   font-size: 20px;
@@ -61,7 +69,7 @@ h3.meetingGuest {
   width: 200px;
   padding: 5px 20px;
   border-radius: 15px;
-  background: #EC9B3B;
+  background: #FE9A65;
   border: 0.5px solid #F6F6F6;
   text-align: center;
   transition: background 0.3s ease;
