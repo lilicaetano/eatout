@@ -32,7 +32,7 @@
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%= f.hidden_field :meeting_id, :value => params[:id] %>
         <%#= f.hidden_field :meet_time, :value => Date.today %>
-        <%= f.submit 'Join meeting', class: 'btn-Meeting' %>
+        <%= f.submit 'Join date', class: 'btn-Meeting' %>
       <% end %>
     <% end %>
   </div>
@@ -46,7 +46,7 @@
 
 
   <div class="btn-create-meeting">
-    <%= link_to 'Meetings list', meetings_path, class: 'btn-createMeeting' %>
+    <%= link_to 'My dates', meetings_path, class: 'btn-createMeeting' %>
   </div>
 </div>
 <%# raise %>
