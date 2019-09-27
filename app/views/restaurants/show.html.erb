@@ -16,7 +16,7 @@
             <%#= f.hidden_field :meet_time, :value => Date.today %>
             <%= f.input :meet_time, as: :time %>
             <div class="center">
-              <%= f.submit class: 'btn-createMeeting' %>
+              <%= f.submit 'Arrange a meal', class: 'btn-createMeeting' %>
 
             </div>
           <% end %>
@@ -24,7 +24,7 @@
       </div>
       <% if @has_meeting %>
       <div class="meeting-button">
-        <%= link_to 'Join date', available_meetings_path(@restaurant), class: 'btn btn-info my-1' %>
+        <%= link_to 'Join a meal', available_meetings_path(@restaurant), class: 'btn btn-info my-1' %>
       </div>
       <% end %>
     </div>

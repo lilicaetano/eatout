@@ -31,10 +31,10 @@
         <div class="card-restaurant-infos">
           <h3 class="rest-title"><%= restaurant.name %></h3>
           <% if @meetingPlaces.include?(restaurant) %>
-            <%= link_to 'Join date', available_meetings_path(restaurant), class: 'btn-MeetingOpen' %><br><br>
-            <%= link_to 'Create date', restaurant_path(restaurant), class: 'btn-createMeeting' %>
+            <%= link_to 'Join a meal', available_meetings_path(restaurant), class: 'btn-MeetingOpen' %><br><br>
+            <%= link_to 'Arrange a meal', restaurant_path(restaurant), class: 'btn-createMeeting' %>
           <% else %><br>
-            <%= link_to 'Create date', restaurant_path(restaurant), class: 'btn-createMeeting' %>
+            <%= link_to 'Arrange a meal', restaurant_path(restaurant), class: 'btn-createMeeting' %>
           <% end %>
         </div>
       </div>
