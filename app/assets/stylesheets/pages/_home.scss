@@ -3,9 +3,10 @@
 body {
   background-image: url("apppages.jpg");
   background-position: center;
-  background-image:cover;
-  background-repeat:no-repeat;
+  background-image: cover;
+  background-repeat: repeat-y;
   height: 100vh;
+  background-position-x: 0%;
 }
 
 .wrapper{

@@ -13,7 +13,7 @@
           <% @meetings.each do |meeting| %>
             <div class = 'card-meeting p-3 my-1'>
               <div class="card-meeting-text">
-                <h2 class= 'card-meeting-title'><%= meeting.restaurant.name %></h2>
+                <h2 class= 'card-meeting-title center-text'><%= meeting.restaurant.name %></h2>
                   <p><%= meeting.restaurant.address %></p>
                   <h3 class="card-meeting-title"><%= meeting.meet_time.strftime("%H:%M")%></h3>
                   <% if meeting.created_at.to_date == Date.today %>
