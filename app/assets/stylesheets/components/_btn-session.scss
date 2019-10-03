@@ -1,0 +1,34 @@
+.btn-green-session {
+  width: 200px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  background: #1EDD87;
+  text-align: center;
+  transition: background 0.3s ease;
+  color: $white;
+  font-size: 25px;
+  a {
+    color: $white;
+    font-size: 25px;
+    }
+  a:hover {
+    color: #FE9A65;
+    text-decoration: none;
+  }
+}
+
+
+.btn-white-session {
+  width: 200px;
+  padding: 5px 20px;
+  border-radius: 25px;
+  background: $white;
+  text-align: center;
+  transition: background 0.3s ease;
+  color: #1EDD87;
+  font-size: 25px;
+  a{
+    color: #1EDD87;
+    font-size: 25px;
+  }
+}

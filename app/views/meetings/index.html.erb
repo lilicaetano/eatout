@@ -5,10 +5,10 @@
       <h2 class='oh-no'>No hosted meals!</h2>
     </div>
   <% else %>
-    <h1 class="meetingGuest">My hosted meals</h1>
+    <h1 class="meeting-exterior-text">My hosted meals</h1>
       <div class='cards'>
         <% if @meetings == [] %>
-          <h3 class='meetingGuest px-3'>You're not a host of any meals</h3>
+          <h3 class='meeting-exterior-text px-3'>You're not a host of any meals</h3>
         <% else %>
           <% @meetings.each do |meeting| %>
             <div class = 'card-meeting p-3 my-1'>
@@ -25,22 +25,22 @@
               </div>
 
               <div class='d-flex align-items-center flex-column'>
-                <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-Meeting' %>
+                <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-thin btn-orange' %>
                 <% if Guest.where(meeting: meeting.id) != [] %>
                   <h3 class='purple'>Your guest is:</h3>
                   <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
-                  <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-Meeting' %>
+                  <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-thin btn-orange' %>
                 <% end %>
-                <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-Meeting' %>
-                <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'cancelbtn' %>
+                <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-thin btn-orange' %>
+                <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-thin btn-cancel' %>
               </div>
             </div>
           <% end %>
         <% end %>
 
-    <h1 class="meetingH1">Joined meals</h1>
+    <h1 class="meeting-exterior-text">Joined meals</h1>
       <% if @user_guest == [] %>
-          <h3 class="meetingH1">No meals joined</h3>
+          <h3 class="meeting-exterior-text">No meals joined</h3>
       <% else %>
         <% @user_guest.each do |guest| %>
           <div class = 'card-meeting p-3 my-1'>
@@ -54,11 +54,11 @@
             </div>
             <div id='fake-notification'></div>
             <div class='d-flex align-items-center flex-column'>
-              <%= link_to 'Show Details', meeting_path(guest.meeting), class: 'btn-Meeting' %>
+              <%= link_to 'Show Details', meeting_path(guest.meeting), class: 'btn-thin btn-orange' %>
               <%=  %>
-              <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: guest)), class: 'btn-Meeting' %>
-              <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn-Meeting' %>
-              <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'cancelbtn' %>
+              <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: guest)), class: 'btn-thin btn-orange' %>
+              <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn-thin btn-orange' %>
+              <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn-thin btn-cancel' %>
             </div>
           </div>
         <% end %>
@@ -69,6 +69,6 @@
   <br>
 
     <div>
-      <%= link_to 'View restaurants', restaurants_path, class: 'btn-createMeeting' %>
+      <%= link_to 'View restaurants', restaurants_path, class: 'btn-thin btn-orange' %>
     </div>
 </div>

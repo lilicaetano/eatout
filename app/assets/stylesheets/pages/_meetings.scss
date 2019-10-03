@@ -1,17 +1,12 @@
-.oh-no{
+.oh-no {
   color: $white;
-  text-shadow: 1px 1px #F6F6F6;
+  font-weight: bolder;
+  // text-shadow: 1px 1px black;
 }
 
-#hello {
+#directions-map {
   width: 100vw;
   margin-top: 10px;
-}
-
-.meetingH1 {
-  color: $white;
-  padding:28px;
-  text-align: center;
 }
 
 .center-text {
@@ -25,9 +20,14 @@
   }
 }
 
-.meetingGuest {
+.meeting-exterior-text {
   color: $white;
+  text-align: center;
 }
+
+// .meeting-exterior-text&h3 {
+
+// }
 
 .card-meeting-title {
   color: #8F3872;
@@ -45,54 +45,6 @@
   align-items: center;
   margin: 25px;
   border-radius:20px;
-
-}
-
-.btn-Meeting {
- color: #FE9A65;
-  width: 200px;
-  padding: 5px 10px;
-  border-radius: 15px;
-  background: $white;
-  border: 2px solid #FE9A65;
-  text-align: center;
-  transition: background 0.3s ease;
-  font-size: 18px;
-  margin: 4px;
-  text-decoration:none;
-}
-
-.purple {
-  color: #8F3872;
-}
-
-.btn-createMeeting {
-  color: #FE9A65;
-  padding: 3px 20px;
-  border-radius: 15px;
-  background: $white;
-  border: 2px solid #FE9A65;
-  text-align: center;
-  transition: background 0.3s ease;
-  font-size: 18px;
-  text-decoration:none;
-}
-
-.cancelbtn {
-  color: $white;
-  width: 200px;
-  padding: 5px 20px;
-  border-radius: 15px;
-  background: #FE9A65;
-  border: 0.5px solid #F6F6F6;
-  text-align: center;
-  transition: background 0.3s ease;
-  font-size: 20px;
-  text-decoration:none;
-  margin: 4px;
-}
-
-.card-meeting {
   .card-meeting-text {
     display: flex;
     flex-direction: column;
@@ -110,4 +62,8 @@
       margin: 5px;
     }
   }
+}
+
+.purple {
+  color: #8F3872;
 }
