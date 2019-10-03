@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div class="card">
+<div class="profile-container">
   <div class="profile-pic">
   <%= cl_image_tag @user.photo, alt: "profile-pic", class: "card-avatar" %>
     <div class="profile-pic-info">
@@ -24,33 +24,31 @@
   <% end %>
 
   <div class="information-card">
-    <div class="information-card-buffer">
-      <div class="interests-card">
-        <div class="card-title-edit">
-          <h2>Interests</h2>
-          <% if @user == current_user %>
-            <%= link_to edit_user_registration_path do %>
-            <i class="far fa-edit"></i>
-            <% end %>
+
+    <div class="interests-card my-3">
+      <div class="card-title-edit">
+        <h2>Interests</h2>
+        <% if @user == current_user %>
+          <%= link_to edit_user_registration_path do %>
+          <i class="far fa-edit"></i>
           <% end %>
-        </div>
-        <p class="card-meeting-title"><%= @user.interest %></p>
+        <% end %>
       </div>
+      <p class="card-meeting-title"><%= @user.interest %></p>
     </div>
-    <div class="information-card-buffer">
-      <div class="interests-card">
+
+      <div class="interests-card my-3">
         <div class="card-title-edit">
           <h2>Food preferences</h2>
           <% if @user == current_user %>
-              <%= link_to edit_user_registration_path do %>
+            <%= link_to edit_user_registration_path do %>
               <i class="far fa-edit"></i>
-              <% end %>
             <% end %>
+          <% end %>
         </div>
         <p class="card-meeting-title"><%= @user.food_preferences %></p>
       </div>
-    </div>
-    <div class="information-card-buffer">
+
       <!-- <div class="interests-card">
         <div class="card-title-edit">
           <h2>Food allergies and intolerances</h2>
@@ -58,9 +56,7 @@
             <%= link_to edit_user_registration_path do %>
               <i class="far fa-edit"></i>
             <% end %> -->
-          <% end %>
-        </div>
-        <%= @user.food_allergens %>
+        <% end %>
       </div>
     </div>
   </div>

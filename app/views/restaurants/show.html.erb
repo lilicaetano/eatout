@@ -2,7 +2,7 @@
 
 <div class="card-1">
   <div class='d-flex flex-column align-items-center'>
-    <div class="button-space">
+    <!-- <div class="button-space"> -->
       <div class="card-product my-3">
         <%= image_tag @restaurant.photo %>
         <div class="card-product-infos">
@@ -16,7 +16,7 @@
             <%#= f.hidden_field :meet_time, :value => Date.today %>
             <%= f.input :meet_time, as: :time %>
             <div class="center">
-              <%= f.submit 'Arrange a meal', class: 'btn-createMeeting' %>
+              <%= f.submit 'Arrange a meal', class: 'btn-thin btn-orange' %>
 
             </div>
           <% end %>
@@ -24,10 +24,11 @@
       </div>
       <% if @has_meeting %>
       <div class="meeting-button">
-        <%= link_to 'Join a meal', available_meetings_path(@restaurant), class: 'btn btn-info my-1' %>
+        <%= link_to 'Join a meal', available_meetings_path(@restaurant), class: 'btn-thin btn-green' %>
       </div>
       <% end %>
+      <%= link_to 'Back', restaurants_path, class: 'btn-thin btn-orange my-3' %>
     </div>
-    <%= link_to 'Back', restaurants_path, class: 'btn-createMeeting' %>
-  </div>
+
+  <!-- </div> -->
 </div>

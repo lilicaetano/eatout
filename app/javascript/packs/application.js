@@ -12,7 +12,7 @@ initFakeNotify();
 
 import 'jquery'
 
-var img = $('#hello')
+var img = $('#directions-map')
 img.hide();
 $('#unfurl-map').click(function(){
   img.show();

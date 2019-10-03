@@ -15,18 +15,7 @@
   color: #1fdd87;
 }
 
-.card-restaurant {
-  overflow: hidden;
-  height: 150px;
-  background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  border-radius: 8px;
-  position:relative;
-  line-height: 1.2;
-}
+
 
 .nav-pills {
   display: inline-flex;
@@ -39,21 +28,6 @@ h3.rest-title {
   font-size: 22px;
 }
 
-// .rest-title h2 {
-
-//   color: #8F3872;
-//   font-size: 50px;
-
-// }
-
-.card-restaurant-infos {
-  padding: 8px 10px;
-  width:230px;
-  // .btn {
-  //   margin-top: 8px;
-  // }
-}
-
 .rest-distance {
   color: #8F3872;
   font-size: 16px !important;
@@ -62,31 +36,6 @@ h3.rest-title {
   border-radius: 5%;
   font-weight: bold;
   bottom: 0px;
-}
-.card-restaurant img {
-  height: 100%;
-  width: 146px;
-  object-fit: cover;
-}
-
-.card-restaurant h3 {
-  // font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 10px;
-  color: #8F3872;
-  margin: 0;
-}
-
-.card-restaurant p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-restaurant .card-restaurant-infos-infos {
-  padding: 16px;
 }
 
  .title {
@@ -99,24 +48,11 @@ h3.rest-title {
 
 }
 
-.btn-MeetingOpen {
- color: #5AB778;
-  width: 50px;
-  padding: 3px 20px;
-  border-radius: 15px;
-  background: #F6F6F6;
-  border: 2px solid #5AB778;
-  text-align: center;
-  transition: background 0.3s ease;
-  text-decoration:none;
-  font-size: 18px;
-}
-
-.nav-item{
+.nav-item {
   background-color: #F6F6F6;
 }
 
-.nav-link{
+.nav-link {
   color: #FE9A65;
 }
 
@@ -126,19 +62,19 @@ h3.rest-title {
 
 
 
-a:hover {
-  color: #C2C2C2;
-}
+// a:hover {
+//   color: #C2C2C2;
+// }
 
-.btn-info {
-  color: #5AB778;
-  padding: 5px 20px;
-  border-radius: 15px;
-  background: #F6F6F6;
-  border: 0.5px solid #5AB778;
-  text-align: center;
-  transition: background 0.3s ease;
-  text-decoration:none;
-  font-size: 20px;
-}
+// .btn-info {
+//   color: #5AB778;
+//   padding: 5px 20px;
+//   border-radius: 15px;
+//   background: #F6F6F6;
+//   border: 0.5px solid #5AB778;
+//   text-align: center;
+//   transition: background 0.3s ease;
+//   text-decoration:none;
+//   font-size: 20px;
+// }
 

@@ -1,7 +1,7 @@
 <title>Mango - Not having a companion to eat with when out. </title>
 <div class="container" >
     <div class='d-flex flex-column align-items-center'>
-      <h1 class="meetingH1">Open meals to join at <%= @restaurant.name %></h1>
+      <h1 class="meeting-exterior-text">Open meals to join at <%= @restaurant.name %></h1>
       <div class='cards'>
         <% @meetings.each do |meeting| %>
           <div class = 'card-meeting p-3 my-1'>
@@ -13,10 +13,10 @@
             </div>
 
             <div class='d-flex align-items-center flex-column'>
-              <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-Meeting' %>
+              <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-thin btn-orange' %>
             </div>
           </div>
         <% end %>
       </div>
-      <%= link_to 'Back to map', restaurants_path, class: 'cancelbtn' %>
+      <%= link_to 'Back to map', restaurants_path, class: 'btn-thin btn-cancel' %>
     </div>

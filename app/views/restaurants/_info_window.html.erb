@@ -6,12 +6,12 @@
   <%= image_tag restaurant.photo %>
   <% if meetings_available %>
     <% if own_meeting %>
-      <h4><%= link_to "Join a meal", meetings_path, class: "btn-createMeeting my-1"%></h4>
+      <h4><%= link_to "Join a meal", meetings_path, class: "btn-thin btn-orange my-1"%></h4>
     <% elsif %>
-      <%= link_to "Join a meal", available_meetings_path(restaurant), class: "btn-createMeeting my-1"%>
+      <%= link_to "Join a meal", available_meetings_path(restaurant), class: "btn-thin btn-orange my-1"%>
     <% end %>
   <% end %>
-  <%= link_to "Arrange a meal", restaurant_path(restaurant), class: "btn-createMeeting my-1" %>
+  <%= link_to "Arrange a meal", restaurant_path(restaurant), class: "btn-thin btn-orange my-1" %>
 </div>
 
 
