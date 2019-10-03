@@ -15,18 +15,7 @@
   color: #1fdd87;
 }
 
-.card-restaurant {
-  overflow: hidden;
-  height: 150px;
-  background: $white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  border-radius: 8px;
-  position:relative;
-  line-height: 1.2;
-}
+
 
 .nav-pills {
   display: inline-flex;
@@ -46,13 +35,6 @@ h3.rest-title {
 
 // }
 
-.card-restaurant-infos {
-  padding: 8px 10px;
-  width:230px;
-  // .btn {
-  //   margin-top: 8px;
-  // }
-}
 
 .rest-distance {
   color: #8F3872;
@@ -62,31 +44,6 @@ h3.rest-title {
   border-radius: 5%;
   font-weight: bold;
   bottom: 0px;
-}
-.card-restaurant img {
-  height: 100%;
-  width: 146px;
-  object-fit: cover;
-}
-
-.card-restaurant h3 {
-  // font-size: 16px;
-  font-weight: bold;
-  padding-bottom: 10px;
-  color: #8F3872;
-  margin: 0;
-}
-
-.card-restaurant p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-restaurant .card-restaurant-infos-infos {
-  padding: 16px;
 }
 
  .title {

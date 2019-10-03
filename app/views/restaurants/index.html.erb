@@ -25,7 +25,7 @@
       <div class="card-restaurant">
         <%= image_tag restaurant.photo %>
         <p class='rest-distance p-1'><%= restaurant.distance_to([51.515696, -0.104113]).round(1)%> Miles</p>
-        <div class="card-restaurant-infos">
+        <div class="card-restaurant-text">
           <h3 class="rest-title"><%= restaurant.name %></h3>
           <% if @meetingPlaces.include?(restaurant) %>
             <%= link_to 'Join a meal', available_meetings_path(restaurant), class: 'btn-MeetingOpen' %><br><br>
