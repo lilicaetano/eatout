@@ -21,21 +21,33 @@
       </div>
     </div>
     <div id="list" class="tab-pane fade">
-      <% @restaurants.each do |restaurant| %>
-      <div class="card-restaurant">
-        <%= image_tag restaurant.photo %>
-        <p class='rest-distance p-1'><%= restaurant.distance_to([51.515696, -0.104113]).round(1)%> Miles</p>
-        <div class="card-restaurant-text">
-          <h3 class="rest-title"><%= restaurant.name %></h3>
-          <% if @meetingPlaces.include?(restaurant) %>
-            <%= link_to 'Join a meal', available_meetings_path(restaurant), class: 'btn-thin btn-green' %><br><br>
-            <%= link_to 'Arrange a meal', restaurant_path(restaurant), class: 'btn-orange btn-thin' %>
-          <% else %><br>
-            <%= link_to 'Arrange a meal', restaurant_path(restaurant), class: 'btn-orange btn-thin' %>
+      <div class="container-fluid">
+        <div class="row justify-content-around">
+          <% @restaurants.each do |restaurant| %>
+            <div class="card-restaurant-wrap col-sm-10 col-md-6 col-lg-4 d-flex justify-content-center">
+              <div class="card-restaurant">
+                <%= image_tag restaurant.photo %>
+                <p class='rest-distance p-1'><%= restaurant.distance_to([51.515696, -0.104113]).round(1)%> Miles</p>
+                <div class="card-restaurant-text">
+                  <h3 class="rest-title"><%= restaurant.name %></h3>
+                  <% if @meetingPlaces.include?(restaurant) %>
+                    <div class="btn-thin btn-green">
+                      <%= link_to 'Join a meal', available_meetings_path(restaurant) %>
+                    </div>
+                    <div class="btn-orange btn-thin">
+                      <%= link_to 'Arrange a meal', restaurant_path(restaurant) %>
+                    </div>
+                  <% else %><br>
+                    <div class="btn-orange btn-thin">
+                      <%= link_to 'Arrange a meal', restaurant_path(restaurant) %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
           <% end %>
         </div>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

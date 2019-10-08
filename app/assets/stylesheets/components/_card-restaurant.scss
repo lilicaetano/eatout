@@ -5,10 +5,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin: 10px 0px;
   border-radius: 8px;
   position:relative;
   line-height: 1.2;
+  width: 100%;
+  padding: 0px;
+  max-width: 420px;
 }
 
 .card-restaurant-text {
@@ -38,6 +41,54 @@
   margin-top: 8px;
 }
 
+
+.card-meeting .btn-thin {
+  //width: 100%;
+}
+
+
 .card-restaurant .card-restaurant-text {
   // padding: 16px;
 }
+
+.card-restaurant-wrap {
+  margin: auto;
+}
+
+.card-restaurant-text {
+  .btn-thin {
+    white-space: nowrap;
+  }
+}
+
+// @media (max-width: 576px) {
+  .card-restaurant-text {
+    .btn-thin {
+      a {
+      font-size: 16px;
+      }
+    }
+  }
+// }
+
+@media (min-width: 740px) {
+  .card-restaurant-text {
+    .btn-thin {
+      a {
+      font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .card-restaurant-text {
+    .btn-thin {
+      padding: 3px 15px;
+      a {
+      font-size: 16px;
+      }
+    }
+  }
+}
+

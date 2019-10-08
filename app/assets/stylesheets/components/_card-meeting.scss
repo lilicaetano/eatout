@@ -1,1 +1,33 @@
+.card-meeting {
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 1px solid #FE9A65;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+  border-radius:20px;
+  max-width: 350px;
+  .card-meeting-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      color: #8F3872;
+    }
+  }
 
+  p {
+  color: black;
+  }
+  div {
+    .btn {
+      margin: 5px;
+    }
+  }
+}
+
+.card-meeting-title {
+  color: #8F3872;
+}

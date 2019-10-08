@@ -1,7 +1,7 @@
 
 <div class='d-flex flex-column align-items-center'>
   <% if @any_created_or_booked == [] %>
-    <div class='dflex text-center'>
+    <div class='d-flex text-center'>
       <h2 class='oh-no'>No hosted meals!</h2>
     </div>
   <% else %>
@@ -10,58 +10,62 @@
         <% if @meetings == [] %>
           <h3 class='meeting-exterior-text px-3'>You're not a host of any meals</h3>
         <% else %>
-          <% @meetings.each do |meeting| %>
-            <div class = 'card-meeting p-3 my-1'>
-              <div class="card-meeting-text">
-                <h2 class= 'card-meeting-title center-text'><%= meeting.restaurant.name %></h2>
-                  <p><%= meeting.restaurant.address %></p>
-                  <h3 class="card-meeting-title"><%= meeting.meet_time.strftime("%H:%M")%></h3>
-                  <% if meeting.created_at.to_date == Date.today %>
-                    <h3 class="card-meeting-title">Today</h3>
-                <% end %>
+          <div class="cards-container d-flex flex-wrap align-items-center justify-content-center">
+            <% @meetings.each do |meeting| %>
+              <div class = 'card-meeting p-3 my-1'>
+                <div class="card-meeting-text">
+                  <h2 class= 'card-meeting-title center-text'><%= meeting.restaurant.name %></h2>
+                    <p><%= meeting.restaurant.address %></p>
+                    <h3 class="card-meeting-title"><%= meeting.meet_time.strftime("%H:%M")%></h3>
+                    <% if meeting.created_at.to_date == Date.today %>
+                      <h3 class="card-meeting-title">Today</h3>
+                    <% else %>
+                      <p><%= meeting.created_at.strftime("%d-%m-%Y") %></p>
+                    <% end %>
+                </div>
 
-
-                <!-- <p><%#= meeting.created_at.strftime("%d-%m-%Y") %></p> -->
+                <div class='d-flex align-items-center flex-column'>
+                  <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-thin btn-orange' %>
+                  <% if Guest.where(meeting: meeting.id) != [] %>
+                    <h3 class='purple'>Your guest is:</h3>
+                    <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
+                    <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-thin btn-orange' %>
+                  <% end %>
+                  <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-thin btn-orange' %>
+                  <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-thin btn-cancel' %>
+                </div>
               </div>
+            <% end %>
+          </div>
 
-              <div class='d-flex align-items-center flex-column'>
-                <%= link_to 'Show Details', meeting_path(meeting), class: 'btn-thin btn-orange' %>
-                <% if Guest.where(meeting: meeting.id) != [] %>
-                  <h3 class='purple'>Your guest is:</h3>
-                  <%= link_to Guest.find_by(meeting: meeting.id).user.first_name, user_path(Guest.find_by(meeting: meeting.id).user) %>
-                  <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: Guest.find_by(meeting: meeting.id).id).id), class: 'btn-thin btn-orange' %>
-                <% end %>
-                <%= link_to 'Restaurant Details', restaurant_path(meeting.restaurant), class: 'btn-thin btn-orange' %>
-                <%= link_to 'Cancel', meeting_path(meeting), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-thin btn-cancel' %>
-              </div>
-            </div>
-          <% end %>
         <% end %>
 
     <h1 class="meeting-exterior-text">Joined meals</h1>
       <% if @user_guest == [] %>
           <h3 class="meeting-exterior-text">No meals joined</h3>
       <% else %>
-        <% @user_guest.each do |guest| %>
-          <div class = 'card-meeting p-3 my-1'>
-            <div class="card-meeting-text">
-              <h2 class= 'card-meeting-title'><%= guest.meeting.restaurant.name %></h2>
-              <p><%= guest.meeting.restaurant.address %></p>
-              <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
-              <h3>Hosted by:</h3>
-              <%= link_to guest.meeting.user.first_name, user_path(guest.meeting.user) %>
-              <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
+        <div class="cards-container d-flex flex-wrap align-items-center justify-content-center">
+          <% @user_guest.each do |guest| %>
+            <div class = 'card-meeting p-3 my-1'>
+              <div class="card-meeting-text">
+                <h2 class= 'card-meeting-title'><%= guest.meeting.restaurant.name %></h2>
+                <p><%= guest.meeting.restaurant.address %></p>
+                <p><%= guest.meeting.meet_time.strftime("%H:%M")%></p>
+                <h3>Hosted by:</h3>
+                <%= link_to guest.meeting.user.first_name, user_path(guest.meeting.user) %>
+                <%= link_to cl_image_tag(guest.meeting.user.photo), user_path(guest.meeting.user), class: "avatar-link-large" %>
+              </div>
+              <div id='fake-notification'></div>
+              <div class='d-flex align-items-center flex-column'>
+                <%= link_to 'Show Details', meeting_path(guest.meeting), class: 'btn-thin btn-orange' %>
+                <%=  %>
+                <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: guest)), class: 'btn-thin btn-orange' %>
+                <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn-thin btn-orange' %>
+                <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn-thin btn-cancel' %>
+              </div>
             </div>
-            <div id='fake-notification'></div>
-            <div class='d-flex align-items-center flex-column'>
-              <%= link_to 'Show Details', meeting_path(guest.meeting), class: 'btn-thin btn-orange' %>
-              <%=  %>
-              <%= link_to 'Chat', chat_room_path(ChatRoom.find_by(guest: guest)), class: 'btn-thin btn-orange' %>
-              <%= link_to 'Restaurant Details', restaurant_path(guest.meeting.restaurant), class: 'btn-thin btn-orange' %>
-              <%= link_to 'Cancel', guest_path(guest), method: :delete, data: { confirm: "Are you sure? you're losing a chance to meet your potential new bestie" }, class: 'btn-thin btn-cancel' %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   <% end %>

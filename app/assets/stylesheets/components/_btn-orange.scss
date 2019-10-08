@@ -2,6 +2,12 @@
   color: #FE9A65;
   background: $white;
   border: 2px solid #FE9A65;
+  a {
+    color: #FE9A65;
+  }
+  &:hover {
+    color: #FE9A65;
+  }
 }
 
 // .btn-Meeting {

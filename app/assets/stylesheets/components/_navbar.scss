@@ -23,6 +23,34 @@
   opacity: 1;
   padding-bottom: 4px;
   padding-top: 2px;
+  position: absolute;
+  left: 50%;
+  margin-left: -42px;
+  top: 10px;
 }
 
+// @media (min-width: 576px) and (max-width: 850px) {
+//   .navbar-expand-sm .navbar-toggler {
+//     display: flex!important;
+//   }
+// }
+
+// @media (min-width: 576px) and (max-width: 850px) {
+//   .navbar-expand-sm .navbar-collapse {
+//     display: none !important;
+//     //flex-basis: auto;
+//   }
+// }
+
+// @media (min-width: 850px) {
+//   .navbar-expand-sm .navbar-collapse {
+//     display: flex;
+//     flex-basis: auto;
+//   }
+// }
+
+// .navbar-expand-sm .navbar-collapse {
+//     display: flex;
+//     flex-basis: auto;
+// }
 
