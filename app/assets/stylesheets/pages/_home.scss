@@ -5,6 +5,9 @@ body {
   background-size: cover;
   min-height: 100vh;
   background-position-x: 0%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .wrapper {
